@@ -10,11 +10,21 @@
     </head>
   
     <style>
-    body {
-        /* The image used */
-        background-image: url('Img/background.jpg');
+        body{
+            position: relative;
         }
-
+        body::after{
+            content: "";
+            display: block;
+            background-image: url('Img/background.jpg');
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 1080px;
+            width: 1920px;
+            z-index: -1;
+            opacity: 0.5;
+        }
        
     </style>
 
@@ -35,7 +45,6 @@
         <button type="button" class="btn btn-primary"> Login </button>
         </div>
      </div>
-
     </div>
 </div>
 
