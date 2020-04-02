@@ -1,8 +1,10 @@
-h1{
-    font-family: Arial;
-    size:500px;
+#main{
+    position:relative;
     }
-    
-h2{
-    size: 500px;
-}
+
+div#home{
+    background-image: url('Img/background.jpg');
+    opacity:0.2;
+    width:300px;
+    height:300px;
+    }
