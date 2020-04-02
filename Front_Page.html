@@ -10,11 +10,30 @@
     </head>
   
     <style>
+<<<<<<< HEAD
     body {
         /* The image used */
         background-image: url('Img/background2.jpg');
         background-repeat: no-repeat;
         }
+=======
+        body{
+            position: relative;
+        }
+        body::after{
+            content: "";
+            display: block;
+            background-image: url('Img/background.jpg');
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 1080px;
+            width: 1920px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+       
+>>>>>>> b0ae04ecbd17812a09dbf9e20fa25ba015a513ad
     </style>
 
    <div class: "container-fluid">
@@ -33,7 +52,6 @@
         <button type="button" class="btn btn-primary"> Login </button>
         </div>
      </div>
-
     </div>
 </div>
 
