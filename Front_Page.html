@@ -6,26 +6,65 @@
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <!-- Latest compiled and minified JavaScript -->
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link herf = "Style_sheet.css" rel = "stylesheet" type="text/css" >
     </head>
   
     <style>
-          body {
+    body {
         /* The image used */
         background-image: url('Img/background.jpg');
-      }
-        h1{
-            text-align: center;
-            font-family: Arial;
-            size:100px;
         }
+
+       
     </style>
 
-<div align = "center" >
-        <h1>  <font color="red"> Poké-Assistant </font> </h1> 
+   <div class: "container-fluid">
+       <div class="row">
+    
+        <div class = "col-sm-15 col-md-6">
+            
+            <h1 class="text-right"> <font color="red"> Poké-Assistant </font> </h1>
+        </div>
+
+     <div class = "col-sm-5 col-md-4 col-md-offset-0">
+        <img src="Img/Pokeball.png" class="img-circle" alt="Cinque Terre" height="70" width="70" > 
         <button type="button" class="btn btn-primary" > Home </button>     
-        <button type="button" class="btn btn-secondary" herf = "all-pokemon.html" > All Pokemon </button>
-        <button type="button" class="btn btn-success">Map</button>
-        <button type="button" class="btn btn-danger">Account Login</button>
+        <button type="button" class="btn btn-primary"> Pokedex </button>
+        <button type="button" class="btn btn-primary"> Interactinve Map</button>
+        <button type="button" class="btn btn-primary"> Type Calculator </button>
+        <button type="button" class="btn btn-primary"> Login </button>
+        </div>
+     </div>
+
+    </div>
+</div>
+
+<div>
+    <h2 align="center"> A simple assistant for all the information you need about the world of Pokemon!</h2>
+</div>
+
+
+<div class= "container">
+    <div class="col-md-5 col-md-offset-4">
+    <h2> Get Started Today Trainer!</h2>
+    <form>
+        <div class = "input-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </form>
+    </div>
+
 </div>
 
 
@@ -33,6 +72,8 @@
     
 
 
-
 </html>
+
+
+
 
