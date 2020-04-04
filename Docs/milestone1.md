@@ -15,13 +15,14 @@ A pokedex, which is a full list of the pokemon included in the game (for this pr
 3. More Info 
 The More Info button under each pokemon in the pokedex will give information about wehre the Pokemon can be found and so on. 
 
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/InteractiveMap.JPG "Interactive Map")
+4. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/InteractiveMap.JPG "Interactive Map")
 
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap.JPG "Click on a location on the map")
+5. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap.JPG "Click on a location on the map")
 
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/TypeCalculator.JPG "Type Calculator")
+6. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/TypeCalculator.JPG "Type Calculator")
 
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Login.JPG "Login")
+8. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Login.JPG "Login")
+This will be page where  user can login into the account if they have already created an account previously. 
 
 
 NOTE: 
