@@ -19,7 +19,7 @@ HTML Screenshot:
 ![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Pokedex2.JPG "Pokedex")
 
 3. More Info:
-The More Info button under each pokemon in the pokedex will give information about the individual pokemon, such as it's base stats, it's evolutions, it's description and location it can be found in game.
+The More Info button under each pokemon in the pokedex will give information about the individual pokemon, such as it's base stats, it's evolutions, it's description and location it can be found in game. 
 
 Wireframe Layout:
 ![Pokedex More Info](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/PokedexMoreInfo.JPG "Click More Info on Pokedex")
@@ -79,5 +79,13 @@ Thomas Guaetta:
 8. Migrated CSS from the individual pages to it's own styleSheet file
 
 Jeenil Patel:
+1. Wrote Infomrmation about the HomePage, Pokedex Page, and More Info and Login Page for M1
+2. Helped with ideas on layouts over Discord. Added the tab about having Favorites.
+3. Created all the base pages for Front Page, Interactive Map, Login Page, More Info Pages, Pokedex Page and created the Style_Sheet
+4. Did HTML & CSS for the Home page, Login Page and Pokedex Page and other Pages that use it. 
+5. Added Naviagtion between Pages
+6. Found the data and Images that we need for each Pokemon in the repsective folder
+7. Created a JSON file with the data for all the Pokemon form Gen 1. (Currently wokring on creating a database using MongoDB Atlas)
+8. Helped wiht the background for the pages. 
 
 Anthony Hong:
