@@ -3,33 +3,81 @@ Layout and page descriptions:
 1. Home Page:
 The home page will be the base page our site. It will have couple of buttons including Home, Pokedex, Interactive Map, Type Calculator and a Login button. It will also have an option to sign up and have a way for useres who already have an account be able to login. The webage will also have some a window in which it will slide show through all the differnet Pokemonm, which is currently not in the design but we plan to have it.
 
-Wireframe Layout
+Wireframe Layout:
 ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/HomePage.JPG "Home Page")
 
-HTML Screenshot
+HTML Screenshot:
 ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/HomePage2.JPG "Home Page HTML")
 
 2. Pokedex:
 A pokedex, which is a full list of the pokemon included in the game (for this project, we plan on only focusing on the first generation of the games). This page would have the functionality of a checklist for the user to click on the pokemon they currently own in order to mark that they have it. The user will also be able to click on a "more info" button for each pokemon. Also wtih that, it will have a list of all the pokemons and their evolution and would be a scrolling page, anyone can view this even they are not logged in. It will have the inofmration of the pokemon the type ad the description the poekeomon. We will also, have an option avaliable where the user "trainer" can select favorite pokemon and have a dropdown menu where they can filter by "Favorites" and "Collection" which will eihter show favorites or all the pokemon in your collection.
 
-Wireframe
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Pokedex.JPG "Pokedex")
+Wireframe Layout:
+![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Pokedex.JPG "Pokedex")
 
-3. More Info 
+HTML Screenshot:
+![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Pokedex2.JPG "Pokedex")
+
+3. More Info:
 The More Info button under each pokemon in the pokedex will give information about the individual pokemon, such as it's base stats, it's evolutions, it's description and location it can be found in game.
 
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/PokedexMoreInfo.JPG "Click More Info on Pokedex")
+Wireframe Layout:
+![Pokedex More Info](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/PokedexMoreInfo.JPG "Click More Info on Pokedex")
+
+HTML Screenshot:
+![Pokedex More Info](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/PokedexMoreInfo2.JPG "Click More Info on Pokedex")
+
+4. Interactive Map:
+
+Wireframe Layout:
+![Interactive Map](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/InteractiveMap.JPG "Interactive Map")
+
+HTML Screenshot:
+![Interactive Map](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/InteractiveMap2.JPG "Interactive Map")
+
+5. Interactive Map More Info 
+
+Wireframe Layout:
+![Interactive Map More Info ](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap.JPG "Click on a location on the map")
+
+HTML Screenshot:
+![Interactive Map More Info ](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap2.JPG "Click on a location on the map")
+
+6. Type Calculator:
+The type calculator will allow users to input one or two types of pokemon of their choice and will return a list of the types of pokemon that they are strong against, weak against, normal strength against, or invunerable to. This will help the users to figure out what weaknesses their team will have and can help them in battle to figure out what moves they should use against any given pokemon.
+
+Wireframe Layout:
+![Type Calculator](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/TypeCalculator.JPG "Type Calculator")
+
+HTML Screenshot:
+![Type Calculator](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/TypeCalculator2.JPG "Type Calculator HTML")
 
 
-4. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/InteractiveMap.JPG "Interactive Map")
+7. Login Page:
 
-5. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap.JPG "Click on a location on the map")
-
-6. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/TypeCalculator.JPG "Type Calculator")
-
-8. ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Login.JPG "Login")
-This will be page where  user can login into the account if they have already created an account previously. 
-
-
+This will be page where the user can login into an account if they have already created an account previously. 
 NOTE: 
 If you login, the "login" button will switch to say "Logout"
+
+Wireframe Layout:
+![Login Page](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Login.JPG "Login")
+
+HTML Screenshot:
+![Login Page](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Login.JPG "Login")
+
+
+Breakdown of the divison of labor:
+
+Thomas Guaetta:
+1. Created the wireframe layouts
+2. Made markdown file and layouts for milestone1
+3. Wrote type calculator information for milestone1
+4. Created typeCalculator HTML & CSS
+5. Helped to get navigation bar to be correctly formatted
+6. Assisted in creation of home page
+7. Created homepage background & selected background for all other pages
+8. Migrated CSS from the individual pages to it's own styleSheet file
+
+Jeenil Patel:
+
+Anthony Hong:
