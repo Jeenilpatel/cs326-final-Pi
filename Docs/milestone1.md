@@ -20,18 +20,7 @@ HTML Screenshot:
 
 ![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Pokedex2.JPG "Pokedex")
 
-3. More Info:
-The More Info button under each pokemon in the pokedex will give information about the individual pokemon, such as it's base stats, it's evolutions, it's description and location it can be found in game. 
-
-Wireframe Layout:
-
-![Pokedex More Info](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/PokedexMoreInfo.JPG "Click More Info on Pokedex")
-
-HTML Screenshot:
-
-![Pokedex More Info](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/PokedexMoreInfo2.JPG "Click More Info on Pokedex")
-
-4. Interactive Map:
+3. Interactive Map:
 
 Wireframe Layout:
 
@@ -41,17 +30,7 @@ HTML Screenshot:
 
 ![Interactive Map](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/InteractiveMap2.JPG "Interactive Map")
 
-5. Interactive Map More Info 
-
-Wireframe Layout:
-
-![Interactive Map More Info ](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap.JPG "Click on a location on the map")
-
-HTML Screenshot:
-
-![Interactive Map More Info ](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/MoreInfoInteractiveMap2.JPG "Click on a location on the map")
-
-6. Type Calculator:
+4. Type Calculator:
 The type calculator will allow users to input one or two types of pokemon of their choice and will return a list of the types of pokemon that they are strong against, weak against, normal strength against, or invunerable to. This will help the users to figure out what weaknesses their team will have and can help them in battle to figure out what moves they should use against any given pokemon.
 
 Wireframe Layout:
@@ -63,7 +42,7 @@ HTML Screenshot:
 ![Type Calculator](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/TypeCalculator2.JPG "Type Calculator HTML")
 
 
-7. Login Page:
+5. Login Page:
 
 This will be page where the user can login into an account if they have already created an account previously. 
 NOTE: 
