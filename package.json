@@ -1,0 +1,24 @@
+{
+  "name": "cs326-final-Pi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pokemon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeenilpatel/cs326-final-Pi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeenilpatel/cs326-final-Pi/issues"
+  },
+  "homepage": "https://github.com/Jeenilpatel/cs326-final-Pi#readme",
+  "dependencies": {
+    "mongodb": "^3.5.5"
+  }
+}
