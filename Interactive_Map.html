@@ -28,7 +28,70 @@
             <a href = "Login_Page.html" type="button" class="btn btn-primary">Login</a>
         </div>
     </div>
+    <div class="map">
+        
+        <h1 class="text-left"> Pokemon Map of Kanto </h1>  
+        Click on towns to see town name and pokemon you will find there.
+        <img src="Img/Pokemon Images/PokeMap.jpg" style = "float: left"   alt="Cinque Terre" usemap="#workmap">
+        <map name="workmap">
+            <area sshape="rect" coords="182, 144, 254, 200" onclick="Pewter()">
+            <area sshape="rect" coords="440, 236, 600, 300" onclick="Celadon()">
+          </map>
+        
+     </div>
+     <div class= right>
+        <h1 id= TownName>Town Name</h1>
+        <p>Pokemon Found here</p>
+        <p id= maplist float: center>
+
+        </p>
+    </div>
 </div>
+<script>
+
+function Pewter(){
+        document.getElementById('TownName').innerHTML = 'Pewter City';
+        var ul = document.createElement('ul');
+        ul.setAttribute('id','proList');
+
+        productList = ['Weedle','Caterpie','Kakuna','Metapod','Pikachu','Pidgey','Pidgeotto'];
+
+        document.getElementById('maplist').appendChild(ul);
+        productList.forEach(renderProductList);
+
+        function renderProductList(element, index, arr) {
+            var li = document.createElement('li');
+            li.setAttribute('class','item');
+
+            ul.appendChild(li);
+
+            li.innerHTML=li.innerHTML + element;
+        }
+    }
+    
+    
+    function Celadon(){
+        document.getElementById('TownName').innerHTML = 'Celadon City';
+        document.getElementById(maplist).innerHTML = "";
+        var Celadon = document.createElement('ul');
+        Celadon.setAttribute('id','proList');
+
+        CeladonList = ['Magikarp','Poliwag','Goldeen','Poliwhirl','Slowpoke','Eevee'];
+
+        document.getElementById('maplist').appendChild(Celadon);
+        CeladonList.forEach(CeladonListt);
+
+        function CeladonListt(element, index, arr) {
+            var li = document.createElement('li');
+            li.setAttribute('class','item');
+
+            Celadon.appendChild(li);
+
+            li.innerHTML=li.innerHTML + element;
+        }
+    }
+</script>
+
 
 
 
