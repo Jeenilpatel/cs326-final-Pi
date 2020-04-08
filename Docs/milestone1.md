@@ -79,4 +79,9 @@ Jeenil Patel:
 7. Created a JSON file with the data for all the Pokemon form Gen 1. (Currently wokring on creating a database using MongoDB Atlas)
 8. Helped wiht the background for the pages. 
 
+
+NOTES: It did not record any of the commits that I did: As, I created the repositry, it might have messed it up but I commted 16 times. I think you check the contributions.
+You can look at the folder commits and check my work if you like: "Img/Commits"
+For the last week: 'Img/Commits/Past Week.png'
+
 Anthony Hong:
