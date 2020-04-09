@@ -2,6 +2,12 @@ const MongoClient = require('mongodb').MongoClient;
 const express = require('express');
 const app = express;
 
+'use strict';
+let http = require('http');
+let url = require('url');
+let fs = require('fs');
+let util = require('util');
+let level = require('level');
 
 
 // connection string.
@@ -13,7 +19,41 @@ MongoClient.connect(uri, function(err, client) {
    console.log('Connected...');
    const collection = client.db("cs326").collection("Pokemon");
 
+   
+   collection.find({id:1}).toArray((err, data) =>
+                     {
+                    if (err) {
+                        console.log(err);
+                    }
+                    console.log(data);
+                    });
+    
+
    // perform actions on the collection object
    //client.close();
 });
 
+
+
+server = http.createServer();
+server.on ('request', async (request, response) => {
+mongoDBCLinet = MongoClient.connect(uri, function(err, client) {
+   if(err) {
+        console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+   }
+   console.log('Connected...');
+   const collection = client.db("cs326").collection("Pokemon");
+
+   
+   collection.find({id:1}).toArray((err, data) =>
+                     {
+                    if (err) {
+                        console.log(err);
+                    }
+                    response.write(JSON.stringify(data))
+                    //console.log(data);
+                    response.end();
+                    });
+    
+   });
+});
