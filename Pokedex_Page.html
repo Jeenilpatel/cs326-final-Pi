@@ -44,18 +44,22 @@
                 <h1 class="text-left"> Pokédex </h1>   
             </div>
 
-            <!-- Add a Drop down menu-->
-            <div class="dropdown" float: left>
-                <button class="dropbtn">filter</button>
-                <div class="dropdown-content">
-                  <a href="#">Pokemon Type</a>
-                  <a href="#">By your pokemon</a>
-                  <a href="#">Alphabetical</a>
-                </div>
-              </div>  
+          
 
             <div class = "col-md-9 ml-auto text-right">
                 <form class="form-inline">
+
+                    <form class="form-inline">
+                        <!-- Add a Drop down menu-->
+                        <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown" float: right>
+                            <button class="dropbtn">filter</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Pokemon Type</a>
+                                    <a href="#"> Favorite pokemon</a>
+                                    <a href="#">Your Collection</a>
+                                </div>
+                        </div> 
+
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
                 </form>
