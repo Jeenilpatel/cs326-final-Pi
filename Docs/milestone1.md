@@ -21,6 +21,7 @@ HTML Screenshot:
 ![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/Layout/Pokedex2.JPG "Pokedex")
 
 3. Interactive Map:
+The interactive Map is a map of the pokemon world in the first generation of the game. On this page users can explore the map by clicking on cities, and then information will show next to map about the city. The information that will be included are the city name and the pokemons you can find in those cities. This map allows users to see which city they will be able to find the pokemon they want to catch. 
 
 Wireframe Layout:
 
