@@ -86,3 +86,9 @@ You can look at the folder commits and check my work if you like: "Img/Commits"
 For the last week: 'Img/Commits/Past Week.png'
 
 Anthony Hong:
+1. Wrote information about the interactive Map
+2. Helped with ideas for pokedex on discord
+3. Created css for filter button on pokedex page
+4. Created filer button.
+5. Found picture for the map
+5. Created interactive map where yiu can click on each city and see more information.
