@@ -12,6 +12,14 @@
    
 <!-- CSS -->
 <link href="Style_Sheet.css" rel="stylesheet">
+<style>
+    html{
+        overflow: hidden;
+    }
+    h2{
+        font-size: 15px;
+    }
+</style>
 
 <!-- Title & Navigation Bar -->
 <div class = "container-fluid">
@@ -28,10 +36,10 @@
             <a href = "Login_Page.html" type="button" class="btn btn-primary">Login</a>
         </div>
     </div>
-    <div class="map">
+    <div class="map" style = "position:relative; right:15px;">
         
-        <h1 class="text-left"> Pokemon Map of Kanto </h1>  
-        Click on towns to see town name and pokemon you will find there.
+        <h1 class="text-left"> Map of Kanto </h1>  
+        <h2>Click on a town to see it's name and what pokemon you will find there</h2>
         <img src="Img/Pokemon Images/PokeMap.jpg" style = "float: left"   alt="Cinque Terre" usemap="#workmap">
         <map name="workmap">
             <area sshape="rect" coords="182, 144, 254, 200" onclick="Pewter()">
@@ -49,9 +57,10 @@
           </map>
         
      </div>
+
      <div class= right>
         <h1 id= TownName text-align=center>Town Name</h1>
-        <p text-align=center> Pokemon Found here</p>
+        <p text-align=center> Pokemon Found here:</p>
         <p id= maplist float: center text-align=center>
 
         </p>
@@ -100,18 +109,5 @@ function Vermillion(){
     document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li><li> Shelder </li> <li> Krabby</li><li> Tentacool </li><li> Horsea </li> <li> Staryu</li><li> Squirtle </li>' ;
     }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
