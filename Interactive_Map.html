@@ -36,13 +36,23 @@
         <map name="workmap">
             <area sshape="rect" coords="182, 144, 254, 200" onclick="Pewter()">
             <area sshape="rect" coords="440, 236, 600, 300" onclick="Celadon()">
+            <area sshape="rect" coords="200, 360, 300, 400" onclick="Virdian()">
+            <area sshape="rect" coords="200, 450, 300, 500" onclick="Pallet()">
+            <area sshape="rect" coords="200, 630, 300, 700" onclick="Cinnabar()">
+            <area sshape="rect" coords="530, 500, 630, 600" onclick="Fuchisia()">
+            <area sshape="rect" coords="630, 230, 730, 300" onclick="Saffron()">
+            <area sshape="rect" coords="640, 100, 700, 170" onclick="Cerulean()">
+            <area sshape="rect" coords="830, 250, 880, 300" onclick="Lavender()">
+            <area sshape="rect" coords="620, 370, 690, 430" onclick="Vermillion()">
+
+
           </map>
         
      </div>
      <div class= right>
-        <h1 id= TownName>Town Name</h1>
-        <p>Pokemon Found here</p>
-        <p id= maplist float: center>
+        <h1 id= TownName text-align=center>Town Name</h1>
+        <p text-align=center> Pokemon Found here</p>
+        <p id= maplist float: center text-align=center>
 
         </p>
     </div>
@@ -51,44 +61,43 @@
 
 function Pewter(){
         document.getElementById('TownName').innerHTML = 'Pewter City';
-        var ul = document.createElement('ul');
-        ul.setAttribute('id','proList');
-
-        productList = ['Weedle','Caterpie','Kakuna','Metapod','Pikachu','Pidgey','Pidgeotto'];
-
-        document.getElementById('maplist').appendChild(ul);
-        productList.forEach(renderProductList);
-
-        function renderProductList(element, index, arr) {
-            var li = document.createElement('li');
-            li.setAttribute('class','item');
-
-            ul.appendChild(li);
-
-            li.innerHTML=li.innerHTML + element;
-        }
+        document.getElementById('maplist').innerHTML = '<li> Weedle </li> <li> Caterpie</li><li> kakuna </li> <li> Metapod</li><li> Pikachu </li> <li> Pidgey</li><li> Pidgeotto</li>' ;
     }
-    
-    
-    function Celadon(){
-        document.getElementById('TownName').innerHTML = 'Celadon City';
-        document.getElementById(maplist).innerHTML = "";
-        var Celadon = document.createElement('ul');
-        Celadon.setAttribute('id','proList');
-
-        CeladonList = ['Magikarp','Poliwag','Goldeen','Poliwhirl','Slowpoke','Eevee'];
-
-        document.getElementById('maplist').appendChild(Celadon);
-        CeladonList.forEach(CeladonListt);
-
-        function CeladonListt(element, index, arr) {
-            var li = document.createElement('li');
-            li.setAttribute('class','item');
-
-            Celadon.appendChild(li);
-
-            li.innerHTML=li.innerHTML + element;
-        }
+function Celadon(){
+    document.getElementById('TownName').innerHTML = 'Celadon City';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li> <li> Poliwhirl</li><li> Slowpoke </li> <li> Eevee</li>' ;
+    }
+function Virdian(){
+    document.getElementById('TownName').innerHTML = 'Virdian City';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li> <li> Tentacool</li>' ;
+    }
+function Pallet(){
+    document.getElementById('TownName').innerHTML = 'Pallet Town';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li> <li> Tentacool</li><li> Staryu </li> <li> Bulbasaur</li><li> Charmander </li> <li> Squirtle</li><li> Pikachu </li>' ;
+    }
+function Cinnabar(){
+    document.getElementById('TownName').innerHTML = 'Cinnabar Island';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Shelder</li><li> Horsea</li><li> Goldeen </li> <li> Tentacool</li><li> Staryu </li> <li> Omanyte</li><li> Kabuto</li><li> Aerodactyl </li> <li> Electrode</li><li> seel </li><li> Tangela</li><li> Rhyton</li> <li> Muk</li><li> Dewong</li>' ;
+    }
+function Fuchisia(){
+    document.getElementById('TownName').innerHTML = 'Fuchisia City';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li> <li> Seaking</li><li> Krabby</li><li> Gyarados</li>' ;
+    }
+function Saffron(){
+    document.getElementById('TownName').innerHTML = 'Saffron City';
+    document.getElementById('maplist').innerHTML = '<li> Hitmonlee </li> <li> Hitmonchan</li><li> Goldeen </li> <li> Seaking</li><li> Krabby</li><li> Gyarados</li>' ;
+    }
+function Cerulean(){
+    document.getElementById('TownName').innerHTML = 'Cerulean City';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li> <li> Psyduck</li><li> Krabby</li><li> Seaking</li><li> Bulbasaur</li><li> Jynx</li>' ;
+    }
+function Lavender(){
+    document.getElementById('TownName').innerHTML = 'Lavender City';
+    document.getElementById('maplist').innerHTML = '<li> Gastly </li> <li> Cubone</li><li> Haunter </li>' ;
+    }
+function Vermillion(){
+    document.getElementById('TownName').innerHTML = 'Vermillion City';
+    document.getElementById('maplist').innerHTML = '<li> Magikarp </li> <li> Poliwag</li><li> Goldeen </li><li> Shelder </li> <li> Krabby</li><li> Tentacool </li><li> Horsea </li> <li> Staryu</li><li> Squirtle </li>' ;
     }
 </script>
 
