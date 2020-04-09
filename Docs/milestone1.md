@@ -79,6 +79,7 @@ Jeenil Patel:
 6. Found the data and Images that we need for each Pokemon in the repsective folder
 7. Created a JSON file with the data for all the Pokemon form Gen 1. (Currently wokring on creating a database using MongoDB Atlas)
 8. Helped wiht the background for the pages. 
+9. Pokedex Page - I have not printed anything for the pokemon info yet, as I am tring to figure out how to connect it to the Database. I actully able to connect it to the the server which stores all the vaue. If you run the file server.js it connects it. So I am trying to figure this out henceforth I have not hard coaded the stuff about Pokemon info in yet, becauase this would be not the best way to do it as it's data about 151 different entitiy.  
 
 
 NOTES: It did not record any of the commits that I did: As, I created the repositry, it might have messed it up but I commted 17 times. I think you check the contributions.
