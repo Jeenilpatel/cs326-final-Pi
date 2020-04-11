@@ -1,6 +1,4 @@
 
-
-
 function test1() {
 
     (async () => {
@@ -14,6 +12,5 @@ function test1() {
             document.getElementById("output").innerHTML = "100: " + counterName + " not found.</b>";
         }
     })();
-
 
 }

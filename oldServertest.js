@@ -19,19 +19,18 @@ MongoClient.connect(uri, function(err, client) {
    console.log('Connected...');
    const collection = client.db("cs326").collection("Pokemon");
 
+   collection.find({id:Pokemon}).toArray((err, data) =>
+   {
+  if (err) {
+      console.log(err);
+  }
+  return data;
+  });
    
-   collection.find({id:1}).toArray((err, data) =>
-                     {
-                    if (err) {
-                        console.log(err);
-                    }
-                    console.log(data);
-                    });
-    
-
    // perform actions on the collection object
    //client.close();
 });
+
 
 
 
@@ -45,15 +44,16 @@ mongoDBCLinet = MongoClient.connect(uri, function(err, client) {
    const collection = client.db("cs326").collection("Pokemon");
 
    
-   collection.find({id:1}).toArray((err, data) =>
-                     {
-                    if (err) {
+   collection.find({id:10}).toArray((err, data) =>
+         {
+            if (err) {
                         console.log(err);
                     }
-                    response.write(JSON.stringify(data))
-                    //console.log(data);
-                    response.end();
-                    });
-    
+               response.write(JSON.stringify(data))
+                  //console.log(data);
+                  response.end();
+               });
    });
 });
+
+
