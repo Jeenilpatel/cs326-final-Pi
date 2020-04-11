@@ -1,3 +1,5 @@
+import { response } from "express/lib/express";
+
 export class Database {
 
     private MongoClient = require('mongodb').MongoClient;
@@ -22,14 +24,14 @@ export class Database {
         )
     };
 
-    public async findPokemonByID(id: number) {
-        await this.db.find({ id: id }).toArray((err, data) => {
-            if (err) {
-                console.log(err);
-            }
+    public async findPokemonByID(pokeID: string) {
+        let x = Number(pokeID);
+        try{    
+            let data = await this.db.find({id: x}).toArray();
             console.log(data);
             return data;
-        });
+        }catch(err){
+            console.log(err);
+        }
     }
-    
 }

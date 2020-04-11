@@ -19,12 +19,13 @@ MongoClient.connect(uri, function(err, client) {
    console.log('Connected...');
    const collection = client.db("cs326").collection("Pokemon");
 
-   collection.find({id:Pokemon}).toArray((err, data) =>
+   collection.find({id:10}).toArray((err, data) =>
    {
   if (err) {
       console.log(err);
   }
-  return data;
+  console.log(data);
+  //return data;
   });
    
    // perform actions on the collection object
@@ -34,26 +35,26 @@ MongoClient.connect(uri, function(err, client) {
 
 
 
-server = http.createServer();
-server.on ('request', async (request, response) => {
-mongoDBCLinet = MongoClient.connect(uri, function(err, client) {
-   if(err) {
-        console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
-   }
-   console.log('Connected...');
-   const collection = client.db("cs326").collection("Pokemon");
+// server = http.createServer();
+// server.on ('request', async (request, response) => {
+// mongoDBCLinet = MongoClient.connect(uri, function(err, client) {
+//    if(err) {
+//         console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+//    }
+//    console.log('Connected...');
+//    const collection = client.db("cs326").collection("Pokemon");
 
    
-   collection.find({id:10}).toArray((err, data) =>
-         {
-            if (err) {
-                        console.log(err);
-                    }
-               response.write(JSON.stringify(data))
-                  //console.log(data);
-                  response.end();
-               });
-   });
-});
+//    collection.find({id:10}).toArray((err, data) =>
+//          {
+//             if (err) {
+//                         console.log(err);
+//                     }
+//                response.write(JSON.stringify(data))
+//                   //console.log(data);
+//                   response.end();
+//                });
+//    });
+// });
 
 

@@ -1,9 +1,8 @@
-
 function test1() {
 
     (async () => {
         let counterName = document.getElementById("test").value;
-        const newURL = url + "/create?name=" + counterName;  // this code will change
+        const newURL = url + "/view?id=" + counterName;  // this code will change
         const resp = await fetch(newURL);
         const j = await resp.json();
         if (j['result'] !== 'error') {
@@ -12,5 +11,4 @@ function test1() {
             document.getElementById("output").innerHTML = "100: " + counterName + " not found.</b>";
         }
     })();
-
 }

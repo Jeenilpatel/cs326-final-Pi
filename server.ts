@@ -32,7 +32,6 @@ export class MyServer {
             return;
         }
         //let found = await this.theDatabase.isFound(options.name);
-       
         //response.end();
 
     }
@@ -43,7 +42,6 @@ export class MyServer {
 
     public async viewPokemon(id: number, response) : Promise<void> {
         // Your code 
-        console.log(this.theDatabase);
         let pokemonData = await this.theDatabase.findPokemonByID(id);
         console.log(pokemonData);
         response.write(JSON.stringify(pokemonData));
