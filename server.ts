@@ -1,5 +1,6 @@
 import { resolve } from "dns";
 
+
 let http = require('http');
 let url = require('url');
 
@@ -47,6 +48,5 @@ export class MyServer {
         response.write(JSON.stringify(pokemonData));
     response.end();
     }
-
 }
 
