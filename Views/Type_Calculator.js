@@ -52,36 +52,6 @@ function typeCalculator(){
         document.getElementById("Fairy").innerHTML = result[17] + "x"
 }
 
-function typeReset(){
-    noType("4weakness1");
-    noType("2weakness1");
-    noType("1/2weakness1");
-    noType("1/4weakness1");
-    noType("0weakness1");
-    document.getElementById("4weakness2").style.visibility = 'hidden';
-    document.getElementById("2weakness2").style.visibility = 'hidden';
-    document.getElementById("2weakness3").style.visibility = 'hidden';
-    document.getElementById("2weakness4").style.visibility = 'hidden';
-    document.getElementById("2weakness5").style.visibility = 'hidden';
-    document.getElementById("2weakness6").style.visibility = 'hidden';
-    document.getElementById("2weakness7").style.visibility = 'hidden';
-    document.getElementById("2weakness8").style.visibility = 'hidden';
-    document.getElementById("1weakness2").style.visibility = 'hidden';
-    document.getElementById("1weakness3").style.visibility = 'hidden';
-    document.getElementById("1weakness4").style.visibility = 'hidden';
-    document.getElementById("1weakness5").style.visibility = 'hidden';
-    document.getElementById("1weakness6").style.visibility = 'hidden';
-    document.getElementById("1weakness7").style.visibility = 'hidden';
-    document.getElementById("1/2weakness2").style.visibility = 'hidden';
-    document.getElementById("1/2weakness3").style.visibility = 'hidden';
-    document.getElementById("1/2weakness4").style.visibility = 'hidden';
-    document.getElementById("1/2weakness5").style.visibility = 'hidden';
-    document.getElementById("1/2weakness6").style.visibility = 'hidden';
-    document.getElementById("1/4weakness2").style.visibility = 'hidden';
-    document.getElementById("0weakness2").style.visibility = 'hidden';
-    
-}
-
 //CSS changing
 function normalType(type){
     document.getElementById(type).innerHTML = "Normal";
@@ -240,9 +210,5 @@ function repeat(){
         document.getElementById("type2").className = "button_display";
         document.getElementById("type2").value = "18"; 
     }
-}
-
-function whenClicked(){
-    repeat();
-    typeReset();
+    typeCalculator();
 }

@@ -12,21 +12,10 @@
    
 <!-- CSS -->
 <link href="Style_Sheet.css" rel="stylesheet">
-<link href="Style_Sheet.css" rel="stylesheet">
     <style>
         html{
             overflow: hidden;
         }
-        input[type=submit]{
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            margin: 4px 4px;
-            cursor: pointer;
-            width: 10%;
-}
     </style>
 
 
@@ -49,30 +38,30 @@
 </div>
 
 <!-- Call in the Javascript -->
-<script src="Type_Calculator_Revised.js"></script>
+<script src="Type_Calculator.js"></script>
 
 <!-- Type 1 -->
 <div align = "center">
     <h1>Type 1</h1>
     <div>
-        <button class="button normalType"   value = '0' onclick='normalType("type1");   whenClicked(); typeCalculator()'>Normal</button>
-        <button class="button fireType"     value = '1'  onclick='fireType("type1");     whenClicked();'>Fire</button>
-        <button class="button waterType"    value = '2'  onclick='waterType("type1");    whenClicked();'>Water</button>
-        <button class="button electricType" value = '3' onclick='electricType("type1"); whenClicked();'>Electric</button>
-        <button class="button grassType"    value = '4'  onclick='grassType("type1");    whenClicked();'>Grass</button>
-        <button class="button iceType"      value = '5'  onclick='iceType("type1");      whenClicked();'>Ice</button>
-        <button class="button fightingType" value = '6' onclick='fightingType("type1"); whenClicked();'>Fighting</button>
-        <button class="button poisonType"   value = '7'  onclick='poisonType("type1");   whenClicked();'>Poison</button>
-        <button class="button groundType"   value = '8' onclick='groundType("type1");   whenClicked();'>Ground</button>
-        <button class="button flyingType"   value = '9'  onclick='flyingType("type1");   whenClicked();'>Flying</button>
-        <button class="button psychicType"  value = '10' onclick='psychicType("type1");  whenClicked();'>Psychic</button>
-        <button class="button bugType"      value = '11'  onclick='bugType("type1");      whenClicked();'>Bug</button>
-        <button class="button rockType"     value = '12'  onclick='rockType("type1");     whenClicked();'>Rock</button>
-        <button class="button ghostType"    value = '13'  onclick='ghostType("type1");    whenClicked();'>Ghost</button>
-        <button class="button dragonType"   value = '14' onclick='dragonType("type1");   whenClicked();'>Dragon</button>
-        <button class="button darkType"     value = '15'  onclick='darkType("type1");     whenClicked();'>Dark</button>
-        <button class="button steelType"    value = '16' onclick='steelType("type1");    whenClicked();'>Steel</button>
-        <button class="button fairyType"    value = '17'  onclick='fairyType("type1");    whenClicked();'>Fairy</button>
+        <button class="button normalType"   value = '0'     onclick='normalType("type1");   repeat(); typeCalculator()'>Normal</button>
+        <button class="button fireType"     value = '1'     onclick='fireType("type1");     repeat()'>Fire</button>
+        <button class="button waterType"    value = '2'     onclick='waterType("type1");    repeat()'>Water</button>
+        <button class="button electricType" value = '3'     onclick='electricType("type1"); repeat()'>Electric</button>
+        <button class="button grassType"    value = '4'     onclick='grassType("type1");    repeat()'>Grass</button>
+        <button class="button iceType"      value = '5'     onclick='iceType("type1");      repeat()'>Ice</button>
+        <button class="button fightingType" value = '6'     onclick='fightingType("type1"); repeat()'>Fighting</button>
+        <button class="button poisonType"   value = '7'     onclick='poisonType("type1");   repeat()'>Poison</button>
+        <button class="button groundType"   value = '8'     onclick='groundType("type1");   repeat()'>Ground</button>
+        <button class="button flyingType"   value = '9'     onclick='flyingType("type1");   repeat()'>Flying</button>
+        <button class="button psychicType"  value = '10'    onclick='psychicType("type1");  repeat()'>Psychic</button>
+        <button class="button bugType"      value = '11'    onclick='bugType("type1");      repeat()'>Bug</button>
+        <button class="button rockType"     value = '12'    onclick='rockType("type1");     repeat()'>Rock</button>
+        <button class="button ghostType"    value = '13'    onclick='ghostType("type1");    repeat()'>Ghost</button>
+        <button class="button dragonType"   value = '14'    onclick='dragonType("type1");   repeat()'>Dragon</button>
+        <button class="button darkType"     value = '15'    onclick='darkType("type1");     repeat()'>Dark</button>
+        <button class="button steelType"    value = '16'    onclick='steelType("type1");    repeat()'>Steel</button>
+        <button class="button fairyType"    value = '17'    onclick='fairyType("type1");    repeat()'>Fairy</button>
     </div>
 </div>
 
@@ -80,25 +69,24 @@
 <div align = "center">
     <h1>Type 2</h1>
     <div>
-        <button class="button normalType"   value = '0'     onclick='normalType("type2"); whenClicked();'>Normal</button>
-        <button class="button fireType"     value = '1'     onclick='fireType("type2"); whenClicked();'>Fire</button>
-        <button class="button fightingType" value = '2'     onclick='fightingType("type2"); whenClicked();'>Fighting</button>
-        <button class="button waterType"    value = '3'     onclick='waterType("type2"); whenClicked();'>Water</button>
-        <button class="button flyingType"   value = '4'     onclick='flyingType("type2"); whenClicked();'>Flying</button>
-        <button class="button grassType"    value = '5'     onclick='grassType("type2"); whenClicked();'>Grass</button>
-        <button class="button poisonType"   value = '6'     onclick='poisonType("type2"); whenClicked();'>Poison</button>
-        <button class="button electricType" value = '7'     onclick='electricType("type2"); whenClicked();'>Electric</button>
-        <button class="button groundType"   value = '8'     onclick='groundType("type2"); whenClicked();'>Ground</button>
-        <button class="button psychicType"  value = '9'     onclick='psychicType("type2"); whenClicked();'>Psychic</button>
-        <button class="button rockType"     value = '10'     onclick='rockType("type2"); whenClicked();'>Rock</button>
-        <button class="button iceType"      value = '11'     onclick='iceType("type2"); whenClicked();'>Ice</button>
-        <button class="button bugType"      value = '12'     onclick='bugType("type2"); whenClicked();'>Bug</button>
-        <button class="button dragonType"   value = '13'     onclick='dragonType("type2"); whenClicked();'>Dragon</button>
-        <button class="button ghostType"    value = '14'     onclick='ghostType("type2"); whenClicked();'>Ghost</button>
-        <button class="button darkType"     value = '15'     onclick='darkType("type2"); whenClicked();'>Dark</button>
-        <button class="button steelType"    value = '16'     onclick='steelType("type2"); whenClicked();'>Steel</button>
-        <button class="button fairyType"    value = '17'     onclick='fairyType("type2"); whenClicked();'>Fairy</button>
-        <button class="button" value = '18' onclick='noType("type2"); whenClicked();'>None</button>
+        <button class="button normalType"   value = '0'     onclick='normalType("type2");   repeat()'>Normal</button>
+        <button class="button fireType"     value = '1'     onclick='fireType("type2");     repeat()'>Fire</button>
+        <button class="button waterType"    value = '3'     onclick='waterType("type2");    repeat()'>Water</button>
+        <button class="button electricType" value = '7'     onclick='electricType("type2"); repeat()'>Electric</button>
+        <button class="button grassType"    value = '5'     onclick='grassType("type2");    repeat()'>Grass</button>
+        <button class="button iceType"      value = '11'    onclick='iceType("type2");      repeat()'>Ice</button>
+        <button class="button fightingType" value = '2'     onclick='fightingType("type2"); repeat()'>Fighting</button>
+        <button class="button poisonType"   value = '6'     onclick='poisonType("type2");   repeat()'>Poison</button>
+        <button class="button groundType"   value = '8'     onclick='groundType("type2");   repeat()'>Ground</button>
+        <button class="button flyingType"   value = '4'     onclick='flyingType("type2");   repeat()'>Flying</button>
+        <button class="button psychicType"  value = '9'     onclick='psychicType("type2");  repeat()'>Psychic</button>
+        <button class="button bugType"      value = '12'    onclick='bugType("type2");      repeat()'>Bug</button>
+        <button class="button rockType"     value = '10'    onclick='rockType("type2");     repeat()'>Rock</button>
+        <button class="button ghostType"    value = '14'    onclick='ghostType("type2");    repeat()'>Ghost</button>
+        <button class="button dragonType"   value = '13'    onclick='dragonType("type2");   repeat()'>Dragon</button>
+        <button class="button darkType"     value = '15'    onclick='darkType("type2");     repeat()'>Dark</button>
+        <button class="button steelType"    value = '16'    onclick='steelType("type2");    repeat()'>Steel</button>
+        <button class="button fairyType"    value = '17'    onclick='fairyType("type2");    repeat()'>Fairy</button>
     </div>
 </div>
 
@@ -112,15 +100,6 @@
     </div>
 <br><br>
 </div>
-   <button type="submit" class="btn btn-primary btn-block" onclick="typeCalculator()" >Submit</button>
-
-
-
-
-<!-- <div align="left">
-    <input type="submit" id="submit" value="Submit" onclick="typeCalculator()" >
-</div> -->
-
 
 <br><br>
 <!-- Type Weaknesses -->
