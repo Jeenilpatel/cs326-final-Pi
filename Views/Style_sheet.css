@@ -34,6 +34,21 @@
             border-radius: 20px;
             width: 200px;
           }
+
+          .button_display {
+            background-color: rgb(73, 73, 73);
+            border: none;
+            color: white;
+            padding: 11px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 20px;
+            width: 200px;
+          }
           
           .button:active {
               box-shadow: 0 5px #666;
@@ -53,6 +68,7 @@
           .fightingType {
               background-color: #C03028;
               border: 1px solid #7D1F1A;
+              visibility: visible;
           }
       
           .waterType {
@@ -195,3 +211,18 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #df5350;}
+
+  table {
+    table-layout: fixed ;
+    width: 95% ;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
