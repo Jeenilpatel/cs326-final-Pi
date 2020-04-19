@@ -1,76 +1,188 @@
 <!DOCTYPE html>
 <!-- Bootstrap Stuff -->
 <html>
-    <head> 
-        <meta name = "viewport" content="width = device-width, initial-scael = 1">
-        <meta charset="utf-8"/>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<head>
+  <meta name="viewport" content="width = device-width, initial-scael = 1">
+  <meta charset="utf-8" />
 
-            <!-- Latest compiled and minified CSS -->
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <!-- Latest compiled and minified JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link herf = "Style_sheet.css" rel = "stylesheet" type="text/css" >
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
 
-        
-        
-      
-        
-    </head>
-   
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link herf="Style_sheet.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+
 <!-- CSS -->
-<link href="Style_Sheet.css" rel="stylesheet">
+
+<link herf="Style_sheet.css" type="text/css">'
+
+<style>
+  #pokedex {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+  }
+
+  body {
+    position: relative;
+  }
+
+  body::after {
+    content: "";
+    display: block;
+    background-color: #a2bdd0;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1920px;
+    z-index: -1;
+  }
+
+  .card {
+    list-style: none;
+    padding: 40px;
+    background-color: whitesmoke;
+    color: #222;
+    text-align: center;
+  }
+
+  .card:hover {
+    animation: bounce 0.5s linear;
+    cursor: pointer;
+  }
+
+  @keyframes bounce {
+    20% {
+      transform: translateY(-6px);
+    }
+
+    40% {
+      transform: translateY(0px);
+    }
+
+    60% {
+      transform: translateY(-2px);
+    }
+
+    80% {
+      transform: translateY(-0px);
+    }
+  }
+
+  .card-title {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: normal;
+  }
+
+
+  .card-image {
+    height: 150px;
+  }
+
+  .container {
+    padding: 50px;
+    margin: 0 auto;
+  }
+
+
+
+  #closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: orangered;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 100px;
+    transition: transform 100ms;
+  }
+
+  button:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    box-shadow: 0px 1px 2px darkred;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 50%;
+  }
+
+  td,
+  th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: gainsboro;
+  }
+</style>
 
 <!-- Title & Navigation Bar -->
-    <div class = "container-fluid">
-        <div class="row">
-            <div class = "col-md-3">
-                <h1 class="text-left"><img src="../Img/Pokeball.png" class="img-circle" alt="Pokeball" height="50" width="50"> Poké-Assistant</h1>   
-            </div>
-            <div class = "col-md-9 ml-auto text-right">
-                <h1>  </h1>
-                <a href = "Front_Page.html" type="button" class="btn btn-primary">Home</a>
-                <a href = "Pokedex_Page.html" type="button" class="btn btn-primary">Pokédex</a>     
-                <a href = "Team_Page.html" type="button" class="btn btn-danger">Teams</a>
-                <a href = "Interactive_Map.html" type="button" class="btn btn-primary">Interactive Map</a>
-                <a href = "Type_Calculator.html"  type="button" class="btn btn-primary">Type Calculator</a>
-                <a href = "Login_Page.html" type="button" class="btn btn-primary">Login</a>
-            </div>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <h1 class="text-left"><img src="../Img/Pokeball.png" class="img-circle" alt="Pokeball" height="50" width="50">
+        Poké-Assistant</h1>
     </div>
-    
-    <div class = "container-fluid">
-        <div class="row"> 
-            <div class = "col-md-3">
-                <h1 class="text-left"> Pokédex </h1>   
-            </div>
-
-          
-
-            <div class = "col-md-9 ml-auto text-right">
-                <form class="form-inline">
-
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
+    <div class="col-md-9 ml-auto text-right">
+      <h1> </h1>
+      <a href="Front_Page.html" type="button" class="btn btn-primary">Home</a>
+      <a href="Pokedex_Page.html" type="button" class="btn btn-primary">Pokédex</a>
+      <a href="Team_Page.html" type="button" class="btn btn-danger">Teams</a>
+      <a href="Interactive_Map.html" type="button" class="btn btn-primary">Interactive Map</a>
+      <a href="Type_Calculator.html" type="button" class="btn btn-primary">Type Calculator</a>
+      <a href="Login_Page.html" type="button" class="btn btn-primary">Login</a>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <h1 class="text-center"> Teams </h1>
+  </div>
+</div>
 
 
-   
+<table align = "center">
+  <tr>
+      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </th>
+      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </th>
+      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </th>
+  </tr>
+  <tr>
+      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </td>
+      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </td>
+      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </td>
+</tr>
+</table>
 
-         
-        </div>
 
-       
-    
+<body>
+  <div class="container">
+    <ul id="pokedex"></ul>
+  </div>
+  <script src="../Routes/teams.js"></script>
 
+</body>
 
-
-
-
-
+</html>
