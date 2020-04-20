@@ -12,11 +12,12 @@
    
 <!-- CSS -->
 <link href="Style_Sheet.css" rel="stylesheet">
-    <style>
-        html{
-            overflow: hidden;
+<style>
+            body::after{
+            height: 175vh;
         }
-    </style>
+</style>
+
 
 
 <!-- Title & Navigation Bar -->
@@ -29,7 +30,7 @@
             <h1>  </h1>
             <a href = "Front_Page.html" type="button" class="btn btn-primary">Home</a>     
             <a href = "Pokedex_Page.html" type="button" class="btn btn-primary">Pokédex</a>
-            <a href = "Team_Page.html.html" type="button" class="btn btn-primary">Teams</a>
+            <a href = "Team_Page.html" type="button" class="btn btn-primary">Teams</a>
             <a href = "Interactive_Map.html" type="button" class="btn btn-primary">Interactive Map</a>
             <a href = "Type_Calculator.html"  type="button" class="btn btn-danger">Type Calculator</a>
             <a href = "Login_Page.html" type="button" class="btn btn-primary">Login</a>
@@ -38,7 +39,7 @@
 </div>
 
 <!-- Call in the Javascript -->
-<script src="Type_Calculator.js"></script>
+<script src="../Routes/Type_Calculator.js"></script>
 
 <!-- Type 1 -->
 <div align = "center">
@@ -146,5 +147,7 @@
       <td id = Fairy></td>
     </tr>
   </table>
+
+  <br><br>
 
 </html>

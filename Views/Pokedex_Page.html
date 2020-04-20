@@ -149,6 +149,26 @@
         background-color: gainsboro;
     }
     
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #337AB7;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #D9534F;
+    }
+
 </style>
 
 <!-- Title & Navigation Bar -->
@@ -170,6 +190,8 @@
     </div>
 </div>
 
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 <div class="row">
     <div>
         <h1 class="text-center"> Pokédex </h1>
@@ -184,5 +206,8 @@
     <script src="../Routes/pokedex.js"></script>
 
 </body>
+
+<script src = '../Routes/TopButton.js'></script>
+
 
 </html>

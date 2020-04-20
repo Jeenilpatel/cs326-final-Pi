@@ -100,8 +100,6 @@
     margin: 0 auto;
   }
 
-
-
   #closeBtn {
     position: absolute;
     top: 20px;
@@ -132,9 +130,25 @@
     padding: 8px;
   }
 
-  tr:nth-child(even) {
-    background-color: gainsboro;
-  }
+  #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #337AB7;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #D9534F;
+    }
 </style>
 
 <!-- Title & Navigation Bar -->
@@ -162,17 +176,18 @@
   </div>
 </div>
 
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 <table align = "center">
   <tr>
-      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </th>
-      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </th>
-      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </th>
+      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" height = "200"> </th>
+      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" height = "200"> </th>
+      <th> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" height = "200"> </th>
   </tr>
   <tr>
-      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </td>
-      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </td>
-      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" > </td>
+      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" height = "200"> </td>
+      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" height = "200"> </td>
+      <td> <img img src="https://orig00.deviantart.net/696e/f/2013/019/2/7/pokeball_by_zel_duh-d5s04qj.gif" height = "200"> </td>
 </tr>
 </table>
 
@@ -182,6 +197,9 @@
     <ul id="pokedex"></ul>
   </div>
   <script src="../Routes/teams.js"></script>
+
+
+  <script src="../Routes/TopButton.js"></script>
 
 </body>
 
