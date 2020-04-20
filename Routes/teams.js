@@ -1,58 +1,35 @@
 const pokedex = document.getElementById('pokedex');
-const cachedPokemon = {};
 
-//Fetchets the Pokemon form the API the first 151 Pokemon
+function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
-const fetchPokemon = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=151`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const pokemon = data.results.map((data, index) => ({
-        name: data.name,
-        id: index + 1,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}));
+    const promises = [];
+    
+        const url = `https://pokeapi.co/api/v2/pokemon/${document.getElementById(PokeID).value}`;
 
-    ShowPokemon(pokemon);
+        promises.push(fetch(url).then((res) => res.json() ) );
+
+        Promise.all(promises).then( (results) => {
+                    const pokemon = results.map((result) => (
+                        {
+                            name: result.name,
+                            image: result.sprites['front_default'],
+                            type: result.types.map( (type) => type.type.name).join(', '),
+                            id: result.id
+                        }
+                    )
+                );
+                const nameCapitalized = pokemon[0].name.charAt(0).toUpperCase() + pokemon[0].name.slice(1)
+                document.getElementById(pokemon_Name).innerHTML = nameCapitalized;
+                document.getElementById(pokemon_Num).src = pokemon[0].image;
+        }
+    );
 };
 
-
-
-//Displays the Pokemon in a card format and creates a car for the firs 151 Pokemon
-const ShowPokemon = (pokemon) => {
-    const pokemonHTMLString = pokemon.map( 
-        (pokeman) =>
-    `
-        <li class="card" onclick="SelectedPokemon(${pokeman.id})">
-            <img class="card-image" src="${pokeman.image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            </a>
-         </li>
-    `
-        ).join('');
-    pokedex.innerHTML = pokemonHTMLString;
-};
-
-//Wheneve  person select a pokmeon it check the users Cach and loads it from their, if not present it fectes it from the URL and saves it so it loads faster the next time
-
-const SelectedPokemon = async (id) => {
-    if (!cachedPokemon[id]) {
-        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-        const res = await fetch(url);
-        const pokeman = await res.json();
-        cachedPokemon[id] = pokeman;
-        Popup(pokeman);
-    } else {
-        Popup(cachedPokemon[id]);
-    }
-};
-
-// Creats a Popup windowd with some infomration about the Pokemon selected.
-const Popup = (pokeman) => {
-    console.log(pokeman);
-    const type = pokeman.types.map((type) => type.type.name)
-    const baseName = pokeman.stats.map((stat) => stat.stat.name)
-    const baseStats = pokeman.stats.map((stats) => stats.base_stat)
+function team_Update(){
+    fetchPokemon('PokeID1', 'pokemon1', 'pokemon1_Name');
+    fetchPokemon('PokeID2', 'pokemon2', 'pokemon2_Name');
+    fetchPokemon('PokeID3', 'pokemon3', 'pokemon3_Name');
+    fetchPokemon('PokeID4', 'pokemon4', 'pokemon4_Name');
+    fetchPokemon('PokeID5', 'pokemon5', 'pokemon5_Name');
+    fetchPokemon('PokeID6', 'pokemon6', 'pokemon6_Name');
 }
-
-
-fetchPokemon();

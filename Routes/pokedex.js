@@ -1,7 +1,7 @@
 const pokedex = document.getElementById('pokedex');
 const cachedPokemon = {};
 
-//Fetchets the Pokemon form the API the first 151 Pokemon
+//Fetches the first 151 Pokemon from the API
 
 const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=151`;
@@ -15,22 +15,22 @@ const fetchPokemon = async () => {
     ShowPokemon(pokemon);
 };
 
-//Displays the Pokemon in a card format and creates a car for the firs 151 Pokemon
+//Displays the Pokemon in a card format and creates a card for the first 151 Pokemon
 const ShowPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon.map( 
         (pokeman) =>
-    `
-        <li class="card" onclick="SelectedPokemon(${pokeman.id})">
-            <img class="card-image" src="${pokeman.image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            </a>
-         </li>
-    `
+        `
+            <li class="card" onclick="SelectedPokemon(${pokeman.id})">
+                <img class="card-image" src="${pokeman.image}"/>
+                <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+                </a>
+            </li>
+        `
         ).join('');
     pokedex.innerHTML = pokemonHTMLString;
 };
 
-//Wheneve  person select a pokmeon it check the users Cach and loads it from their, if not present it fectes it from the URL and saves it so it loads faster the next time
+//Whenever a person select a pokemon it check the users Cach and loads it from there, if not present it fetches it from the URL and saves it so it loads faster the next time
 
 const SelectedPokemon = async (id) => {
     if (!cachedPokemon[id]) {
@@ -44,15 +44,12 @@ const SelectedPokemon = async (id) => {
     }
 };
 
-// Creats a Popup windowd with some infomration about the Pokemon selected.
+// Creates a Popup window with some information about the Pokemon selected.
 const Popup = (pokeman) => {
     console.log(pokeman);
     const type = pokeman.types.map((type) => type.type.name)
     const baseName = pokeman.stats.map((stat) => stat.stat.name)
     const baseStats = pokeman.stats.map((stats) => stats.base_stat)
-
-
-
 
     const htmlString = `
         <div class="popup">
