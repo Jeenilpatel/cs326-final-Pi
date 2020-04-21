@@ -1,4 +1,5 @@
 const pokedex = document.getElementById('pokedex');
+const url = "http://localhost:8080/teams"; // NOTE NEW URL
 
 function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
@@ -32,4 +33,21 @@ function team_Update(){
     fetchPokemon('PokeID4', 'pokemon4', 'pokemon4_Name');
     fetchPokemon('PokeID5', 'pokemon5', 'pokemon5_Name');
     fetchPokemon('PokeID6', 'pokemon6', 'pokemon6_Name');
+    teamCreate();
+}
+
+function teamCreate() {
+    (async () => {
+	let teamName = document.getElementById("Team-Name").value;
+	// let userName = document.getElementById("username").value;
+	const newURL = url + "/create?name=" + teamName;
+	console.log("counterCreate: fetching " + newURL);
+	const resp = await fetch(newURL);
+	const j = await resp.json();
+	if (j['result'] !== 'error') {
+	    document.getElementById("output").innerHTML = "101: <b>" + teamName + " created.</b>";
+	} else {
+	    document.getElementById("output").innerHTML = "100: " + teamName + " not found.</b>";
+	}
+    })();
 }
