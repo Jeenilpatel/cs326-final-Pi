@@ -1,10 +1,10 @@
 export class Database {
 
     private MongoClient = require('mongodb').MongoClient;
-    private uri = "mongodb+srv://Jeenil:1234@cs326finalproject-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
+    private uri = "mongodb+srv://guest:guest@cluster0-y0tyl.mongodb.net/test?retryWrites=true&w=majority";
     private client;
     private collectionName : string;
-    private dbName : string = "emery";
+    private dbName : string = "pokemon";
 
     constructor(collectionName) {
 	this.collectionName = collectionName;
@@ -39,38 +39,5 @@ export class Database {
 	console.log("put: key = " + key + ", value = " + value);
 	let result = await collection.updateOne({'name' : key}, { $set : { 'value' : value} }, { 'upsert' : true } );
 	console.log("result = " + result);
-    }
-
-    public async get(key: string) : Promise<string> {
-	let db = this.client.db(this.dbName); // this.level(this.dbFile);
-	let collection = db.collection(this.collectionName);
-	console.log("get: key = " + key);
-	let result = await collection.findOne({'name' : key });
-	console.log("get: returned " + JSON.stringify(result));
-	if (result) {
-	    return result.value;
-	} else {
-	    return null;
-	}
-    }
-    
-    public async del(key: string) : Promise<void> {
-	let db = this.client.db(this.dbName);
-	let collection = db.collection(this.collectionName);
-	console.log("delete: key = " + key);
-	let result = await collection.deleteOne({'name' : key });
-	console.log("result = " + result);
-	// await this.db.del(key);
-    }
-    
-    public async isFound(key: string) : Promise<boolean>  {
-	console.log("isFound: key = " + key);
-	let v = await this.get(key);
-	console.log("is found result = " + v);
-	if (v === null) {
-	    return false;
-	} else {
-	    return true;
-	}
     }
 }
