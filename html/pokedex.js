@@ -3,7 +3,6 @@ const pokedex = document.getElementById('pokedex');
 const cachedPokemon = {};
 
 //Fetches the first 151 Pokemon from the API
-
 const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=151`;
     const res = await fetch(url);
