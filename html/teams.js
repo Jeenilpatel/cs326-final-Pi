@@ -1,4 +1,5 @@
 const url = "http://localhost:8080/counter"; // NOTE NEW URL
+
 const pokedex = document.getElementById('pokedex');
 
 function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
