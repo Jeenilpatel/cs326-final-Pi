@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/counter"; // NOTE NEW URL
+//const url = "http://localhost:8080/counter"; // NOTE NEW URL
 const pokedex = document.getElementById('pokedex');
 const cachedPokemon = {};
 
@@ -70,8 +70,8 @@ const Popup = (pokeman) => {
                         </tr>
                     
                         <tr>
-                            <td>${type[0].toUpperCase()}</td>
-                            <td>${type[1].toUpperCase()}</td>
+                            <td>${type[0]}</td>
+                            <td>${type[1]}</td>
                         </tr>
                     </table>
                 </p>
@@ -79,12 +79,12 @@ const Popup = (pokeman) => {
                 <p>
                 <table align = "center">
                         <tr>
-                            <th>${baseName[0].toUpperCase()}</th>
-                            <th>${baseName[1].toUpperCase()}</th>
-                            <th>${baseName[2].toUpperCase()}</th>
-                            <th>${baseName[3].toUpperCase()}</th>
-                            <th>${baseName[4].toUpperCase()}</th>
-                            <th>${baseName[5].toUpperCase()}</th>
+                            <th>${baseName[0]}</th>
+                            <th>${baseName[1]}</th>
+                            <th>${baseName[2]}</th>
+                            <th>${baseName[3]}</th>
+                            <th>${baseName[4]}</th>
+                            <th>${baseName[5]}</th>
                         </tr>
                         <tr>
                             <td>${baseStats[0]}</td>
