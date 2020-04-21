@@ -4,7 +4,7 @@ export class Database {
     private uri = "mongodb+srv://guest:guest@cluster0-y0tyl.mongodb.net/test?retryWrites=true&w=majority";
     private client;
     private collectionName : string;
-    private dbName : string = "pokemon";
+    private dbName : string = "emery";
 
     constructor(collectionName) {
 	this.collectionName = collectionName;
@@ -27,17 +27,51 @@ export class Database {
 	   // code goes here
 	   })();
 
-	*/
+    */
+    
 	(async () => {
 	    await this.client.connect().catch(err => { console.log(err); });
 	})();
     }
 
-    public async put(key: string, value: string) : Promise<void> {
-	let db = this.client.db(this.dbName);
-	let collection = db.collection(this.collectionName);
-	console.log("put: key = " + key + ", value = " + value);
-	let result = await collection.updateOne({'name' : key}, { $set : { 'value' : value} }, { 'upsert' : true } );
-	console.log("result = " + result);
-    }
+    public async put(key: string) : Promise<void> {
+        let db = this.client.db(this.dbName);
+        let collection = db.collection(this.collectionName);
+        console.log("put: key = " + key);
+        let result = await collection.updateOne({'name' : key}, { 'upsert' : true } );
+        console.log("result = " + result);
+	}
+	
+    public async get(key: string) : Promise<string> {
+		let db = this.client.db(this.dbName); // this.level(this.dbFile);
+		let collection = db.collection(this.collectionName);
+		console.log("get: key = " + key);
+		let result = await collection.findOne({'name' : key });
+		console.log("get: returned " + JSON.stringify(result));
+		if (result) {
+			return result.value;
+		} else {
+			return null;
+		}
+	}
+
+	public async del(key: string) : Promise<void> {
+		let db = this.client.db(this.dbName);
+		let collection = db.collection(this.collectionName);
+		console.log("delete: key = " + key);
+		let result = await collection.deleteOne({'name' : key });
+		console.log("result = " + result);
+		// await this.db.del(key);
+	}
+
+    public async isFound(key: string) : Promise<boolean>  {
+		console.log("isFound: key = " + key);
+		let v = await this.get(key);
+		console.log("is found result = " + v);
+		if (v === null) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }

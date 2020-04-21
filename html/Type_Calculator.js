@@ -1,3 +1,5 @@
+const url = "http://localhost:8080/counter"; // NOTE NEW URL
+
 var types = new Array(
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1, 1],          // Normal
     [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1, 1],      // Fire

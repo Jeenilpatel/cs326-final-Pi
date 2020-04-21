@@ -1,4 +1,6 @@
-    //Get the button
+const url = "http://localhost:8080/counter"; // NOTE NEW URL
+
+//Get the button
     var mybutton = document.getElementById("myBtn");
     
     // When the user scrolls down 20px from the top of the document, show the button

@@ -21,11 +21,15 @@ export class MyServer {
 	    next();
     });
     
+	// Serve static pages from a particular path.
+	this.server.use(express.static(__dirname + '/html'));
 
+    //// HANDLE CREATE, READ, UPDATE, AND DELETE OPERATIONS
     this.router.get('/create', this.createHandler.bind(this));
+	this.router.get('/users/:userId/read', [this.errorHandler.bind(this), this.readHandler.bind(this)]);
+	this.router.get('/users/:userId/update',[this.errorHandler.bind(this), this.updateHandler.bind(this)]);
+	this.router.get('/users/:userId/delete', this.deleteHandler.bind(this));
    
-
-    
 	//// HANDLE ERRORS WITH A WILDCARD (*)
 	this.router.get('', async (request, response) => {
         response.send(JSON.stringify({ "result" : "command-not-found" }));
@@ -35,10 +39,6 @@ export class MyServer {
 	this.server.use('/counter', this.router);
     }
 
-    private async createHandler(request, response) : Promise<void> {
-        await this.createCounter(request.params['userId']+"-"+request.query.name);
-        }
-
     private async errorHandler(request, response, next) : Promise<void> {
         let value : boolean = await this.theDatabase.isFound(request.params['userId']+"-"+request.query.name);
         if (!value) {
@@ -47,11 +47,58 @@ export class MyServer {
         } else {
             next();
         }
-        }
+    }
+
+    private async createHandler(request, response) : Promise<void> {
+        await this.createCounter(request.params['userId']+ "-" + request.query.name, response);
+    }
+
+    private async readHandler(request, response): Promise<void> {
+        await this.readCounter(request.params['userId']+"-"+request.query.name, response);
+    }
+    
+    private async updateHandler(request, response) : Promise<void> {
+        await this.updateCounter(request.params['userId']+"-"+request.query.name, response);
+    }
+    
+    private async deleteHandler(request, response) : Promise<void> {
+        await this.deleteCounter(request.params['userId']+"-"+request.query.name, response);
+    }
         
+    public listen(port) : void  {
+	    this.server.listen(port);
+    }
 
+    public async createCounter(name: string, response) : Promise<void> {
+        console.log("creating counter named '" + name + "'");
+        await this.theDatabase.put(name);
+        response.write(JSON.stringify({'result' : 'created',
+                           'name' : name}));
+        response.end();
+    }
+        
+    public async errorCounter(name: string, response) : Promise<void> {
+        response.write(JSON.stringify({'result': 'error'}));
+        response.end();
+    }
 
+    public async readCounter(name: string, response) : Promise<void> {
+        let value = await this.theDatabase.get(name);
+        response.write(JSON.stringify({'result' : 'read',
+                           'name' : name}));
+        response.end();
+    }
 
+    public async updateCounter(name: string, response) : Promise<void> {
+        await this.theDatabase.put(name);
+        response.write(JSON.stringify({'result' : 'updated',
+                           'name' : name}));
+        response.end();
+    }
 
-
+    public async deleteCounter(name : string, response) : Promise<void> {
+        await this.theDatabase.del(name);
+        response.write(JSON.stringify({'result' : 'deleted'}));
+        response.end();
+    }
 };

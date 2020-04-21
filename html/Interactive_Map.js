@@ -1,3 +1,4 @@
+const url = "http://localhost:8080/counter"; // NOTE NEW URL
 
 function Pewter(){
 document.getElementById('TownName').innerHTML = 'Pewter City';
