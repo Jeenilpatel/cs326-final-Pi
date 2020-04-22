@@ -44,7 +44,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <h1 class="text-left"><img src="./Img/Pokeball.png" class="img-circle" alt="Pokeball" height="50" width="50">
+      <h1 class="text-left"><img src="../Img/Pokeball.png" class="img-circle" alt="Pokeball" height="50" width="50">
         Poké-Assistant</h1>
     </div>
     <div class="col-md-9 ml-auto text-right">
@@ -73,7 +73,6 @@
       <input name="Team-Name" id="Team-Name" class="form-control" placeholder="Team-Name"  style = "width: 50%"/>
       <br>
     </div>
-
 
 <!-- Teams Table -->
 <table align = "center">
@@ -121,6 +120,7 @@
 
 </div>
 
+
 <body>
   <!-- Submit Button -->
   <div style = "text-align: center">
@@ -139,6 +139,416 @@
   <!-- Script Call -->
   <script src = "poke_Assist.js"></script>
 
+
 </body>
+<body>
+  <div style="height:170px;overflow:auto;">
+    <div class="header" id="myHeader">
+      <h2>Pokemon Numbers</h2>
+    </div>
+    <table overflow-y:scroll;
+    height:100px;
+    display:block; style="float: left"  id="t01">
+      <tr>
+        <td>Pokemon Numbers</td>
+      </tr>
+      <script>
+      const ShowPokemon = (pokemon) => {
+        const pokemonHTMLString = pokemon.map( 
+            (pokeman) =>
+            `
+                <li class="card" onclick="SelectedPokemon(${pokeman.id})">
+                    <img class="card-image" src="${pokeman.image}"/>
+                    <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+                    </a>
+                </li>
+            `
+            ).join('');
+        pokedex.innerHTML = pokemonHTMLString;
+    };</script>
+     <div class="container">
+      <ul id="pokedex"></ul>
+  </div>
+      <tr>
+        <td>1	Bulbasaur</td>
+      </tr>
+      <tr>
+        <td>2	Ivysaur</td>
+      </tr>
+      <tr>
+        <td>003	Venusaur</td>
+      </tr>
+      <tr>
+        <td>004	Charmander</td>
+      </tr>
+      <tr>
+        <td>005	Charmeleon</td>
+      </tr>
+      <tr>
+        <td>006	Charizard</td>
+      </tr>
+      <tr>
+        <td>007	Squirtle</td>
+      </tr>
+      <tr>
+        <td>008	Wartortle</td>
+      </tr>
+      <tr>
+        <td>009	Blastoise</td>
+      </tr>
+      <tr>
+        <td>010	Caterpie</td>
+      </tr>
+      <tr>
+        <td>011	Metapod</td>
+      </tr>
+      <tr>
+        <td>012	Butterfree</td>
+      </tr>
+      <tr>
+        <td>013	Weedle</td>
+      </tr>
+      <tr>
+        <td>014	Kakuna</td>
+      </tr>
+      <tr>
+        <td>015	Beedrill	</td>
+      </tr>
+      <tr>
+        <td>016	Pidgey</td>
+      </tr>
+      <tr>
+        <td>017	Pidgeotto</td>
+      </tr>
+      <tr>
+        <td>018	Pidgeot</td>
+      </tr>
+      <tr>
+        <td>019	Rattata</td>
+      </tr>
+      <tr>
+        <td>020	Raticate</td>
+      </tr>
+      <tr>
+        <td>021	Spearow</td>
+      </tr>
+      <tr>
+        <td>022	Fearow</td>
+      </tr>
+      <tr>
+        <td>023	Ekans</td>
+      </tr>
+      <tr>
+        <td>024	Arbok</td>
+      </tr>
+      <tr>
+        <td>025	Pikachu</td>
+      </tr>
+      <tr>
+        <td>026	Raichu</td>
+      </tr>
+      <tr>
+        <td>027	Sandshrew</td>
+      </tr>
+      <tr>
+        <td>028	Sandslash</td>
+      </tr>
+      <tr>
+        <td>029	Nidoran</td>
+      </tr>
+      <tr>
+        <td>030	Nidorina</td>
+      </tr>
+      <tr>
+        <td>031	Nidoqueen</td>
+      </tr>
+      <tr>
+        <td>032	Nidoran♂</td>
+      </tr>
+      <tr>
+        <td>033	Nidorino	</td>
+      </tr>
+      <tr>
+        <td>034	Nidoking</td>
+      </tr>
+      <tr>
+        <td>035	Clefairy</td>
+      </tr>
+      <tr>
+        <td>036	Clefable</td>
+      </tr>
+      <tr>
+        <td>037	Vulpix</td>
+      </tr>
+      <tr>
+        <td>038	Ninetales	</td>
+      </tr>
+      <tr>
+        <td>039	Jigglypuff</td>
+      </tr>
+      <tr>
+        <td>040	Wigglytuff</td>
+      </tr>
+      <tr>
+        <td>041	Zubat</td>
+      </tr>
+      <tr>
+        <td>042	Golbat</td>
+      </tr>
+      <tr>
+        <td>043	Oddish</td>
+      </tr>
+      <tr>
+        <td>044	Gloom</td>
+      </tr>
+      <tr>
+        <td>045	Vileplume</td>
+      </tr>
+      <tr>
+        <td>046	Paras</td>
+      </tr>
+      <tr>
+        <td>047	Parasect	</td>
+      </tr>
+      <tr>
+        <td>048	Venonat</td>
+      </tr>
+      <tr>
+        <td>049	Venomoth	</td>
+      </tr>
+      <tr>
+        <td>050	Diglett</td>
+      </tr>
+      <tr>
+        <td>051	Dugtrio</td>
+      </tr>
+      <tr>
+        <td>052	Meowth</td>
+      </tr>
+      <tr>
+        <td>053	Persian</td>
+      </tr>
+      <tr>
+        <td>054	Psyduck</td>
+      </tr>
+      <tr>
+        <td>055	Golduck</td>
+      </tr>
+      <tr>
+        <td>056	Mankey</td>
+      </tr>
+      <tr>
+        <td>057	Primeape</td>
+      </tr>
+      <tr>
+        <td>058	Growlithe</td>
+      </tr>
+      <tr>
+        <td>059	Arcanine</td>
+      </tr>
+      <tr>
+        <td>060	Poliwag</td>
+      </tr>
+      <tr>
+        <td>061	Poliwhirl</td>
+      </tr>
+      <tr>
+        <td>062	Poliwrath</td>
+      </tr>
+      <tr>
+        <td>063	Abra</td>
+      </tr>
+      <tr>
+        <td>064	Kadabra</td>
+      </tr>
+      <tr>
+        <td>065	Alakazam</td>
+      </tr>
+      <tr>
+        <td>066	Machop</td>
+      </tr>
+      <tr>
+        <td>067	Machoke</td>
+      </tr>
+      <tr>
+        <td>068	Machamp</td>
+      </tr>
+      <tr>
+        <td>069	Bellsprout</td>
+      </tr>
+      <tr>
+        <td>070	Weepinbell	</td>
+      </tr>
+      <tr>
+        <td>071	Victreebel</td>
+      </tr>
+      <tr>
+        <td>072	Tentacool</td>
+      </tr>
+      <tr>
+        <td>073	Tentacruel</td>
+      </tr>
+      <tr>
+        <td>074	Geodude</td>
+      </tr>
+      <tr>
+        <td>075	Graveler</td>
+      </tr>
+      <tr>
+        <td>076	Golem</td>
+      </tr>
+      <tr>
+        <td>077	Ponyta</td>
+      </tr>
+      <tr>
+        <td>078	Rapidash</td>
+      </tr>
+      <tr>
+        <td> 079	Slowpoke	</td>
+      </tr>
+      <tr>
+        <td>080	Slowbro	</td>
+      </tr>
+      <tr>
+        <td>081	Magnemite</td>
+      </tr>
+      <tr>
+        <td>082	Magneton	</td>
+      </tr>
+      <tr>
+        <td>083	Farfetch'd</td>
+      </tr>
+      <tr>
+        <td>084	Doduo</td>
+      </tr>
+      <tr>
+        <td>085	Dodrio</td>
+      </tr>
+      <tr>
+        <td>086	Seel	</td>
+      </tr>
+      <tr>
+        <td>087	Dewgong</td>
+      </tr>
+      <tr>
+        <td>088	Grimer	</td>
+      </tr>
+      <tr>
+        <td>089	Muk</td>
+      </tr>
+      <tr>
+        <td>090	Shellder	</td>
+      </tr>
+      <tr>
+        <td>091	Cloyster</td>
+      </tr>
+      <tr>
+        <td>092	Gastly</td>
+      </tr>
+      <tr>
+        <td>093	Haunter</td>
+      </tr>
+      <tr>
+        <td>094	Gengar</td>
+      </tr>
+      <tr>
+        <td>095	Onix	</td>
+      </tr>
+      <tr>
+        <td>096	Drowzee</td>
+      </tr><tr>
+        <td>097	Hypno</td>
+      </tr>
+      <tr>
+        <td>098	Krabby	</td>
+      </tr>
+      <tr>
+        <td>099	Kingler	</td>
+      </tr>
+      <tr>
+        <td>100	Voltorb	</td>
+      </tr>
+      <tr>
+        <td>101	Electrode</td>
+      </tr>
+      <tr>
+        <td>102	Exeggcute</td>
+      </tr>
+      <tr>
+        <td>103	Exeggutor</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+      </tr>
+      
+    </table>
+    <div class="header" id="myHeader">
+      <h2>My Header</h2>
+    </div>
+    <table  style="float: left">
+      <tr>
+        <td>Saved Teams</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+  
+    
+
+
+
 
 </html>
