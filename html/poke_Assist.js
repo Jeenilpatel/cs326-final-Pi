@@ -335,12 +335,8 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
     );
 };
 
-<<<<<<< HEAD
 //Updates the HTML
 function team_Update(){
-=======
-function HTML_Image_Update(){
->>>>>>> f3a52168060df894601d4f3a1bff9e7e753abc7a
     fetchPokemon('PokeID1', 'pokemon1', 'pokemon1_Name');
     fetchPokemon('PokeID2', 'pokemon2', 'pokemon2_Name');
     fetchPokemon('PokeID3', 'pokemon3', 'pokemon3_Name');
@@ -386,5 +382,3 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
