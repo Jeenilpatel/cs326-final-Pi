@@ -8,6 +8,9 @@ PUT 	Changes and/or replaces resources or collections
 DELETE 	Deletes resources
 
 
+Flowchart:
+![Flowchart](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/API_Flowchart.JPG "Flowchart")
+
 
 A brief and precise representation of APIs for you application
 - At least one set of four screenshots of your client interface with descriptions
@@ -20,81 +23,92 @@ The website has few things that were implemented by all of us. After we created 
     
 1. /index.html
 This page is the home page for our website, and will be the first thing viewable by the users when you go on the website. It will also have a few buttons that will be “submit” and 
-“submit” - This will simply be the register page where you can put your credentials and create an account.
-“Already have an Account” - This button will take you to a different page which will let you put your username and password and login. (/Login_Page.html)
+
+JS Functions Used:
+signUp: reads in the entered username and password fields. Will later save it to the database once we learn to create accounts.
 
 HTML Screenshot:
-![HomePage]( "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Home%20Page.png "Home Page HTML")
 
 
 2. /Pokedex_Page.html
 This page is the Pokedex Page where it will use some client side JS, and make some API calls and then fetch the 151 Pokemon and creta a card for each of them. If you hover over any of the cards it has bounce to it giving the user an idea to click on it for more information. Once the user has clicked on any one Pokemon it will then create a pop up window with some of the necessary information related to that Pokemon, for example: Type, Stats, and height, weight and an image of the Pokemon is also viewable.
     This page is view only and if clicked on the Pokemon you can interact with it. There is also a top button on the right which simply takes the user back to the top of the page so they don’t have to scroll back to the top. The popup also has a close button on the top right side of the page to close the window after you have finished looking at the Pokemon. Once a Pokemon is clicked on it also saves the information of the Pokemon in the cach so it loads faster the next time you are on that Pokemon. 
 
-![Pokedex]( "Pokedex p1")
-![Pokedex]( "Pokedex p2")
+![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Pokdex%20p1.png "Pokedex p1")
+![Pokedex](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Pokedex%20p2.png "Pokedex p2")
 
 
 3. /Team_Page.html
 The teams page is what will be the only users who have logged in can use. It will be a page where you can create Teams, name the teams, Edit, update the teams and even delete the teams. It will save the data associated with each user and Team on the database. 
 
-- Create Team - The user can choose any time name they desire, along with any Pokemon, that they want on the team. Once the user has put the ID # associated with the Pokemon they can hit create team - Once they hit create team the name of the team should be viewable on the page. 
+JS Functions Used:
 
-- View Team - They can use the View Team button to retrieve the team again or view the team using that button, it will make a call to the database and fetch the ID of the associated Pokemon on that team and replace the shaking Pokeball with the correct Pokemono on that team. 
+Create Team: The user can choose any time name they desire, along with any Pokemon, that they want on the team. Once the user has put the ID # associated with the Pokemon they can hit create team - Once they hit create team the name of the team should be viewable on the page. 
 
-- Update Team - This can be used after you create the Team. You can use the View Team button that will make a call to the Database and show you the team, and once you change the ID of the Pokemon you wish to change it will update and save the team accordingly. 
+View Team: They can use the View Team button to retrieve the team again or view the team using that button, it will make a call to the database and fetch the ID of the associated Pokemon on that team and replace the shaking Pokeball with the correct Pokemono on that team. 
 
-- Delete Team - Once you get the team Back all you have to do is, call the team back using the view team button and hit the Delete Team at that point it will erase the data associated with that team name and Pokemon attached  to it. 
+Update Team: This can be used after you create the Team. You can use the View Team button that will make a call to the Database and show you the team, and once you change the ID of the Pokemon you wish to change it will update and save the team accordingly. 
 
-![Teams]( "Teams p1")
-![Teams]( "Teams p2")
-![Teams]( "Teams p3")
+Delete Team: Once you get the team Back all you have to do is, call the team back using the view team button and hit the Delete Team at that point it will erase the data associated with that team name and Pokemon attached  to it. 
+
+![Teams](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Teams-page%20p1.png "Teams p1")
+![Teams](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Teams-page%20p2.png "Teams p2")
+![Teams](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Teams-page%20p3.png "Teams p3")
 
 4. /Interactive_Map.html
 
 The interactive Map is a map of the pokemon world in the first generation of the game. On this page users can explore the map by clicking on cities, and then information will show next to map about the city. The information that will be included are the city name and the pokemons you can find in those cities. This map allows users to see which city they will be able to find the pokemon they want to catch.
 
--for Pewter and all the town functions- clicking the button will display information about the town and also the pokemon you will be able to find in that specific area respective to the town names
+JS Functions Used:
+Pewder(), Celadon(), Viridian(), Pallet(), Cinnabar(), Fuchisia(), Saffron(), Cerulean(), Lavender(), Vermillion(): clicking the button will display information about the town and also the pokemon you will be able to find in that specific area respective to the town names
 
-
-
-![Interactive Map]( "Interactive Map p1")
-![Interactive Map]( "Interactive Map p2")
+![Interactive Map](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Maps%20p1.png "Interactive Map p1")
+![Interactive Map](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Mapes%20p2.png "Interactive Map p2")
 
 
 5. /Type_Calculator.html
 
 The type calculator will allow users to input one or two types of pokemon of their choice and will return a list of the types of pokemon that they are strong against, weak against, normal strength against, or invunerable to. This will help the users to figure out what weaknesses their team will have and can help them in battle to figure out what moves they should use against any given pokemon.
 
- 
+![Type Calculator](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Type-calc%20p1.png "Type Calculator p1")
+![Type Calculator](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Type-calc%20p2.png "Type Calculator p2")
 
-![Type Calculator]( "Type Calculator p1")
-![Type Calculator]( "Type Calculator p2")
+JS Functions Used:
+
+typeCalculator: gets the value of the two selected types and multiplies the “types” array against each other to find a weakness matrix to display
+
+normalType, fireType, fightingType, waterType, flyingType, grassType, poisonType, electricType, groundType, psychicType, rockType, iceType, bugType, dragonType, ghostType, darkType, steelType, fairyType, noType: Updates the CSS & HTML accordingly to the type chosen
+
+repeat: checks for if type1 and type2 are both the same selected type, and sets type2 to none if so
 
 
 6. /Login_Page.html
 This will make calls to the database and check for the user input credentials and let the user login to the account. It has an input for Username and Password
 
-![Login Page]( "Login")
+![Login Page](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Login.png "Login")
+
+JS Functions Used:
+
+login(): reads in the entered username and password fields. Will later pull from database to find the user and log them in.
 
 
 Breakdown of the divison of labor:
 
-
 Thomas Guaetta:
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. Created the JS for type calculator
+2. worked on creating the teams page HTML
+3. Created the teams page javascript in order to pull from the pokeAPI
+4. Condensed the Javascript files into one
+5. Worked on getting the project onto heroku
+6. Created various functions to be used with the database (in milestone 3)
 
 Jeneil Patel:
 1. Worked on the PokedexPage client side JS and CSS 
 2. Help implemeting creating parts of the teams page backend JS and and client side intractions along with the HTML and CSS
 3. Worked on the routing stuff 
 4. Made markdown file and added screenshots 
-5. Helped wiht setting up database stuff
+5. Helped with setting up database stuff
 6. Created a MongoDB databse in order to save infomration about the Users and information associated wiht them.
 
 Anthony Hong:
@@ -102,5 +116,3 @@ Anthony Hong:
 2. worked on JS for interactive map 
 3. worked on JS for and client side for teams page
 4. Helped with server side on teams page
-5. 
-6. 
