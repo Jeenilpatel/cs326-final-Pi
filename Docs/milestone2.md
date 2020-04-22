@@ -99,8 +99,8 @@ Jeneil Patel:
 
 Anthony Hong:
 1. Helped with markdown file.
-2. 
-3. 
-4. 
+2. worked on JS for interactive map 
+3. worked on JS for and client side for teams page
+4. Helped with server side on teams page
 5. 
 6. 
