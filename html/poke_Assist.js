@@ -1,3 +1,5 @@
+import { Database } from "../mongo-database";
+
 //URL
 //const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
 
@@ -484,6 +486,17 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+async function getData(){
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    for (item of data) {
+        const root = document.createElement('div')
+        
+    }
+
+    console.log(data);
+}
 function signUp() {
     let username = document.getElementById(userName_Input);
     let password = document.getElementById(password_Input);
