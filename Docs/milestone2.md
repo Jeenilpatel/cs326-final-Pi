@@ -54,6 +54,8 @@ The teams page is what will be the only users who have logged in can use. It wil
 
 The interactive Map is a map of the pokemon world in the first generation of the game. On this page users can explore the map by clicking on cities, and then information will show next to map about the city. The information that will be included are the city name and the pokemons you can find in those cities. This map allows users to see which city they will be able to find the pokemon they want to catch.
 
+-for Pewter and all the town functions- clicking the button will display information about the town and also the pokemon you will be able to find in that specific area respective to the town names
+
 
 
 ![Interactive Map]( "Interactive Map p1")
@@ -96,7 +98,7 @@ Jeneil Patel:
 6. Created a MongoDB databse in order to save infomration about the Users and information associated wiht them.
 
 Anthony Hong:
-1. 
+1. Helped with markdown file.
 2. 
 3. 
 4. 
