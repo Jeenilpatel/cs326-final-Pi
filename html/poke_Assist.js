@@ -422,3 +422,15 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+function signUp() {
+    let username = document.getElementById(userName_Input);
+    let password = document.getElementById(password_Input);
+    //will eventually save to database
+}
+
+function login() {
+    let username = document.getElementById(userName_Input);
+    let password = document.getElementById(password_Input);
+    //will eventually pull from database
+}
