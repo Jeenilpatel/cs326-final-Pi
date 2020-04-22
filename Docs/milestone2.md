@@ -52,7 +52,8 @@ The teams page is what will be the only users who have logged in can use. It wil
 
 4. /Interactive_Map.html
 
-Explain what it does and so on..
+The interactive Map is a map of the pokemon world in the first generation of the game. On this page users can explore the map by clicking on cities, and then information will show next to map about the city. The information that will be included are the city name and the pokemons you can find in those cities. This map allows users to see which city they will be able to find the pokemon they want to catch.
+
 
 
 ![Interactive Map]( "Interactive Map p1")
@@ -61,7 +62,9 @@ Explain what it does and so on..
 
 5. /Type_Calculator.html
 
-Explain what it does and so on.. 
+The type calculator will allow users to input one or two types of pokemon of their choice and will return a list of the types of pokemon that they are strong against, weak against, normal strength against, or invunerable to. This will help the users to figure out what weaknesses their team will have and can help them in battle to figure out what moves they should use against any given pokemon.
+
+ 
 
 ![Type Calculator]( "Type Calculator p1")
 ![Type Calculator]( "Type Calculator p2")
