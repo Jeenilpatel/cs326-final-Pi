@@ -37,8 +37,9 @@
             <a href = "Login_Page.html" type="button" class="btn btn-primary">Login</a>
         </div>
     </div>
+
     <div class="map" style = "position:relative; right:15px;">
-        
+
         <h1 class="text-left"> Map of Kanto </h1>  
         <h2>Click on a town to see it's name and what Pokemon you will find there</h2>
         <img src="./Img/PokeMap.jpg" style = "float: left" usemap="#workmap">
@@ -53,22 +54,19 @@
             <area sshape="rect" coords="640, 100, 700, 170" onclick="Cerulean()">
             <area sshape="rect" coords="830, 250, 880, 300" onclick="Lavender()">
             <area sshape="rect" coords="620, 370, 690, 430" onclick="Vermillion()">
-
-
           </map>
-        
      </div>
 
-     <div class= right>
+    <script src = "poke_Assist.js"></script>
+
+    <div class= right>
         <h1 id= TownName text-align=center>Town Name</h1>
         <p text-align=center> Pokemon Found here:</p>
         <p id= maplist float: center text-align=center></p>
         <p id= mapDesc float: center text-align = center></p>
-
-        
     </div>
 </div>
 
-<script src = "poke_Assist.js"></script>
+
 
 </html>

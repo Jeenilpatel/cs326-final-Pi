@@ -1,5 +1,6 @@
 //URL
-const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
+//const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
+var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
 
 //Interactive Map
 
@@ -335,23 +336,25 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
     );
 };
 
-<<<<<<< HEAD
-//Updates the HTML
-function team_Update(){
-=======
-function HTML_Image_Update(){
->>>>>>> 9c42b42a7232aeb9b789b11368eb6503bcddd00e
+
+// function HTML_Image_Update(){
+//     fetchPokemon('PokeID1', 'pokemon1', 'pokemon1_Name');
+//     fetchPokemon('PokeID2', 'pokemon2', 'pokemon2_Name');
+//     fetchPokemon('PokeID3', 'pokemon3', 'pokemon3_Name');
+//     fetchPokemon('PokeID4', 'pokemon4', 'pokemon4_Name');
+//     fetchPokemon('PokeID5', 'pokemon5', 'pokemon5_Name');
+//     fetchPokemon('PokeID6', 'pokemon6', 'pokemon6_Name');
+//     teamCreate();
+// }
+
+//Creating a team on the database
+function teamCreate() {
     fetchPokemon('PokeID1', 'pokemon1', 'pokemon1_Name');
     fetchPokemon('PokeID2', 'pokemon2', 'pokemon2_Name');
     fetchPokemon('PokeID3', 'pokemon3', 'pokemon3_Name');
     fetchPokemon('PokeID4', 'pokemon4', 'pokemon4_Name');
     fetchPokemon('PokeID5', 'pokemon5', 'pokemon5_Name');
     fetchPokemon('PokeID6', 'pokemon6', 'pokemon6_Name');
-    teamCreate();
-}
-
-//Creating a team on the database
-function teamCreate() {
     (async () => {
 	let teamName = document.getElementById("Team-Name").value;
 	// let userName = document.getElementById("username").value;
@@ -364,6 +367,22 @@ function teamCreate() {
 	} else {
 	    document.getElementById("output").innerHTML = "100: " + teamName + " not found.</b>";
 	}
+    })();
+}
+
+function teamRead() {
+    (async () => {
+    let teamName = document.getElementById("Team-Name").value;
+	// let userName = document.getElementById("username").value;
+	const newURL = url + "/read?name=" + teamName;
+	console.log("counterRead: fetching " + newURL);
+	const resp = await fetch(newURL);
+	const j = await resp.json();
+	if (j['result'] !== 'error') {
+	    document.getElementById("output").innerHTML = "201: <b>" + teamName + " value = " + j['value'] + "</b>";
+	} else {
+	    document.getElementById("output").innerHTML = "200: " + counterName + " not found.</b>";
+	}	    
     })();
 }
 
