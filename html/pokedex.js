@@ -1,6 +1,6 @@
 //const url = "http://localhost:8080/counter"; // NOTE NEW URL
+
 const pokedex = document.getElementById('pokedex');
-const cachedPokemon = {};
 
 //Fetches the first 151 Pokemon from the API
 const fetchPokemon = async () => {
@@ -33,15 +33,10 @@ const ShowPokemon = (pokemon) => {
 //Whenever a person select a pokemon it check the users Cach and loads it from there, if not present it fetches it from the URL and saves it so it loads faster the next time
 
 const SelectedPokemon = async (id) => {
-    if (!cachedPokemon[id]) {
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const res = await fetch(url);
-        const pokeman = await res.json();
-        cachedPokemon[id] = pokeman;
-        Popup(pokeman);
-    } else {
-        Popup(cachedPokemon[id]);
-    }
+        const pokeman = await res.json(); 
+        Popup(pokeman); 
 };
 
 // Creates a Popup window with some information about the Pokemon selected.
