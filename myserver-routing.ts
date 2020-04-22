@@ -68,7 +68,7 @@ export class MyServer {
     }
 
     public listen(port) : void  {
-	this.server.listen(port);
+		this.server.listen(port);
     }
 
     public async createCounter(name: string, response) : Promise<void> {
@@ -107,13 +107,4 @@ export class MyServer {
 				       'value'  : name }));
 	response.end();
     }
-<<<<<<< HEAD
-
-    
-
-    
 };
-=======
-}
-
->>>>>>> 9c42b42a7232aeb9b789b11368eb6503bcddd00e

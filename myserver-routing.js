@@ -225,3 +225,5 @@ var MyServer = /** @class */ (function () {
     return MyServer;
 }());
 exports.MyServer = MyServer;
+
+server.listen(process.env.PORT);

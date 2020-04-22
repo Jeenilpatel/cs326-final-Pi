@@ -1,5 +1,5 @@
 //URL
-const url = "http://localhost:8080/counter"; // NOTE NEW URL
+const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
 
 //Interactive Map
 

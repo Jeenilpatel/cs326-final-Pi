@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/counter"; // NOTE NEW URL
+const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
 
 //Get the button
     var mybutton = document.getElementById("myBtn");
