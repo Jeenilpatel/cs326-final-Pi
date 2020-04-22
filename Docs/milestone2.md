@@ -24,7 +24,7 @@ This page is the home page for our website, and will be the first thing viewable
 “Already have an Account” - This button will take you to a different page which will let you put your username and password and login. (/Login_Page.html)
 
 HTML Screenshot:
-![HomePage]( "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Home%20Page.png "Home Page HTML")
 
 
 2. /Pokedex_Page.html

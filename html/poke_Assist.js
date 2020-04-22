@@ -484,7 +484,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-<<<<<<< HEAD
 function signUp() {
     let username = document.getElementById(userName_Input);
     let password = document.getElementById(password_Input);
@@ -496,7 +495,6 @@ function login() {
     let password = document.getElementById(password_Input);
     //will eventually pull from database
 }
-=======
 //URL
 //const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
 
@@ -512,4 +510,3 @@ function login() {
 
     
 
->>>>>>> 4be036d6c79f0696169f6b202b7242a0dd25f910
