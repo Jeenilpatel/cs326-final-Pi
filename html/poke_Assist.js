@@ -370,10 +370,11 @@ function teamCreate() {
     })();
 }
 
+var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
+
 function teamRead() {
     // (async () => {
     let teamName = document.getElementById("Team-Name").value;
-    var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
 	// let userName = document.getElementById("username").value;
 	// const newURL = url + "/read?name=" + teamName;
 	// console.log("counterRead: fetching " + newURL);
@@ -391,6 +392,12 @@ function teamRead() {
         fetchPokemon(testTeam.pokemon4, 'pokemon4', 'pokemon4_Name');
         fetchPokemon(testTeam.pokemon5, 'pokemon5', 'pokemon5_Name');
         fetchPokemon(testTeam.pokemon6, 'pokemon6', 'pokemon6_Name');
+        document.getElementById("PokeID1").value = testTeam.pokemon1;
+        document.getElementById("PokeID2").value = testTeam.pokemon2;
+        document.getElementById("PokeID3").value = testTeam.pokemon3;
+        document.getElementById("PokeID4").value = testTeam.pokemon4;
+        document.getElementById("PokeID5").value = testTeam.pokemon5;
+        document.getElementById("PokeID6").value = testTeam.pokemon6;
     }
     // })();
 }
