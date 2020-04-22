@@ -355,19 +355,21 @@ function teamCreate() {
     fetchPokemon(document.getElementById("PokeID5").value, 'pokemon5', 'pokemon5_Name');
     fetchPokemon(document.getElementById("PokeID6").value, 'pokemon6', 'pokemon6_Name');
 
-    (async () => {
+    // (async () => {
 	let teamName = document.getElementById("Team-Name").value;
-	// let userName = document.getElementById("username").value;
-	const newURL = url + "/create?name=" + teamName;
-	console.log("counterCreate: fetching " + newURL);
-	const resp = await fetch(newURL);
-	const j = await resp.json();
-	if (j['result'] !== 'error') {
-	    document.getElementById("output").innerHTML = "101: <b>" + teamName + " created.</b>";
-	} else {
-	    document.getElementById("output").innerHTML = "100: " + teamName + " not found.</b>";
-	}
-    })();
+	// // let userName = document.getElementById("username").value;
+	// const newURL = url + "/create?name=" + teamName;
+	// console.log("counterCreate: fetching " + newURL);
+	// const resp = await fetch(newURL);
+	// const j = await resp.json();
+	// if (j['result'] !== 'error') {
+	//     document.getElementById("output").innerHTML = "101: <b>" + teamName + " created.</b>";
+	// } else {
+	//     document.getElementById("output").innerHTML = "100: " + teamName + " not found.</b>";
+	// }
+    // })();
+
+    document.getElementById("output").innerHTML =  teamName + "  Created!";
 }
 
 var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
@@ -400,7 +402,66 @@ function teamRead() {
         document.getElementById("PokeID6").value = testTeam.pokemon6;
     }
     // })();
+
+    document.getElementById("output").innerHTML =  teamName + "  Team";
 }
+
+function teamUpdate(){
+    // (async () => {
+        let teamName = document.getElementById("Team-Name").value;
+        // let userName = document.getElementById("username").value;
+        // let counterValue = document.getElementById("countervalue").value;
+    
+        // const newURL = url + "/users/" + userName + "/update";
+        // console.log("counterUpdate: fetching " + newURL);
+        // let data = { 'name': counterName, 'value': counterValue};
+        // const resp = await postData(newURL, data);    
+        // const j = await resp.json();
+        // if (j['result'] !== 'error') {
+        //     document.getElementById("output").innerHTML = "301: <b>" + userName + ", " + counterName + " value = " + j['value'] + "</b>";
+        // } else {
+        //     document.getElementById("output").innerHTML = "300: " + userName + ", " + counterName + " not found.";
+        // }	
+        // })();
+
+
+        if(teamName == testTeam.name){
+            fetchPokemon(document.getElementById("PokeID1").value, 'pokemon1', 'pokemon1_Name');
+            fetchPokemon(document.getElementById("PokeID2").value, 'pokemon2', 'pokemon2_Name');
+            fetchPokemon(document.getElementById("PokeID3").value, 'pokemon3', 'pokemon3_Name');
+            fetchPokemon(document.getElementById("PokeID4").value, 'pokemon4', 'pokemon4_Name');
+            fetchPokemon(document.getElementById("PokeID5").value, 'pokemon5', 'pokemon5_Name');
+            fetchPokemon(document.getElementById("PokeID6").value, 'pokemon6', 'pokemon6_Name');
+        }
+
+       document.getElementById("output").innerHTML = teamName + "  Updated!";
+    };
+
+    function teamDelete(){
+
+        // (async () => {
+            let teamName = document.getElementById("Team-Name").value;
+        //     let counterName = document.getElementById("countername").value;
+        //     let userName = document.getElementById("username").value;
+            
+        //     let data = { 'name': counterName};
+        //     const newURL = url + "/users/" + userName + "/delete";
+        //     console.log("counterDelete: fetching " + newURL);
+        
+        //     const resp = await postData(newURL, data);	    
+        //     const j = await resp.json();
+        //     if (j['result'] !== 'error') {
+        //         document.getElementById("output").innerHTML = "401: <b>" + userName + ", " + counterName + " deleted.</b>";
+        //     } else {
+        //         document.getElementById("output").innerHTML = "400: " + userName + ", " + counterName + " not found.</b>";
+        //     }	 
+        //     })();
+
+    
+
+       document.getElementById("output").innerHTML = teamName + "  Deleted!";
+
+    }
 
 
 //Get the button
@@ -423,6 +484,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+<<<<<<< HEAD
 function signUp() {
     let username = document.getElementById(userName_Input);
     let password = document.getElementById(password_Input);
@@ -434,3 +496,20 @@ function login() {
     let password = document.getElementById(password_Input);
     //will eventually pull from database
 }
+=======
+//URL
+//const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
+
+
+
+
+
+
+
+
+
+
+
+    
+
+>>>>>>> 4be036d6c79f0696169f6b202b7242a0dd25f910
