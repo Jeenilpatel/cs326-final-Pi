@@ -1,6 +1,5 @@
 //URL
 //const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
-var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
 
 //Interactive Map
 
@@ -314,8 +313,8 @@ function repeat(){
 function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
     const promises = [];
-    
-        const url = `https://pokeapi.co/api/v2/pokemon/${document.getElementById(PokeID).value}`;
+        console.log("test")
+        const url = `https://pokeapi.co/api/v2/pokemon/` + PokeID;
 
         promises.push(fetch(url).then((res) => res.json() ) );
 
@@ -349,12 +348,13 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
 //Creating a team on the database
 function teamCreate() {
-    fetchPokemon('PokeID1', 'pokemon1', 'pokemon1_Name');
-    fetchPokemon('PokeID2', 'pokemon2', 'pokemon2_Name');
-    fetchPokemon('PokeID3', 'pokemon3', 'pokemon3_Name');
-    fetchPokemon('PokeID4', 'pokemon4', 'pokemon4_Name');
-    fetchPokemon('PokeID5', 'pokemon5', 'pokemon5_Name');
-    fetchPokemon('PokeID6', 'pokemon6', 'pokemon6_Name');
+    fetchPokemon(document.getElementById("PokeID1").value, 'pokemon1', 'pokemon1_Name');
+    fetchPokemon(document.getElementById("PokeID2").value, 'pokemon2', 'pokemon2_Name');
+    fetchPokemon(document.getElementById("PokeID3").value, 'pokemon3', 'pokemon3_Name');
+    fetchPokemon(document.getElementById("PokeID4").value, 'pokemon4', 'pokemon4_Name');
+    fetchPokemon(document.getElementById("PokeID5").value, 'pokemon5', 'pokemon5_Name');
+    fetchPokemon(document.getElementById("PokeID6").value, 'pokemon6', 'pokemon6_Name');
+
     (async () => {
 	let teamName = document.getElementById("Team-Name").value;
 	// let userName = document.getElementById("username").value;
@@ -370,20 +370,36 @@ function teamCreate() {
     })();
 }
 
+var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
+
 function teamRead() {
-    (async () => {
+    // (async () => {
     let teamName = document.getElementById("Team-Name").value;
 	// let userName = document.getElementById("username").value;
-	const newURL = url + "/read?name=" + teamName;
-	console.log("counterRead: fetching " + newURL);
-	const resp = await fetch(newURL);
-	const j = await resp.json();
-	if (j['result'] !== 'error') {
-	    document.getElementById("output").innerHTML = "201: <b>" + teamName + " value = " + j['value'] + "</b>";
-	} else {
-	    document.getElementById("output").innerHTML = "200: " + counterName + " not found.</b>";
-	}	    
-    })();
+	// const newURL = url + "/read?name=" + teamName;
+	// console.log("counterRead: fetching " + newURL);
+	// const resp = await fetch(newURL);
+	// const j = await resp.json();
+	// if (j['result'] !== 'error') {
+	//     document.getElementById("output").innerHTML = "201: <b>" + teamName + " value = " + j['value'] + "</b>";
+	// } else {
+	//     document.getElementById("output").innerHTML = "200: " + counterName + " not found.</b>";
+    // }
+    if(teamName == testTeam.name){
+        fetchPokemon(testTeam.pokemon1, 'pokemon1', 'pokemon1_Name');
+        fetchPokemon(testTeam.pokemon2, 'pokemon2', 'pokemon2_Name');
+        fetchPokemon(testTeam.pokemon3, 'pokemon3', 'pokemon3_Name');
+        fetchPokemon(testTeam.pokemon4, 'pokemon4', 'pokemon4_Name');
+        fetchPokemon(testTeam.pokemon5, 'pokemon5', 'pokemon5_Name');
+        fetchPokemon(testTeam.pokemon6, 'pokemon6', 'pokemon6_Name');
+        document.getElementById("PokeID1").value = testTeam.pokemon1;
+        document.getElementById("PokeID2").value = testTeam.pokemon2;
+        document.getElementById("PokeID3").value = testTeam.pokemon3;
+        document.getElementById("PokeID4").value = testTeam.pokemon4;
+        document.getElementById("PokeID5").value = testTeam.pokemon5;
+        document.getElementById("PokeID6").value = testTeam.pokemon6;
+    }
+    // })();
 }
 
 
