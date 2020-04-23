@@ -55,7 +55,7 @@ var MyServer = /** @class */ (function () {
             next();
         });
         // Serve static pages from a particular path.
-        this.server.use('/', express.static('./html'));
+        this.server.use('/', express.static('html'));
         this.server.use(express.json()); //for post
         // Set a single handler for a route.
         this.router.post('/users/:userId/create', this.createHandler.bind(this));

@@ -21,7 +21,7 @@ export class MyServer {
 	    next();
 	});
 	// Serve static pages from a particular path.
-	this.server.use('/', express.static('./html'));
+	this.server.use('/', express.static('html'));
 
 	this.server.use(express.json());//for post
 
