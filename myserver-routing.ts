@@ -8,7 +8,6 @@ export class MyServer {
 
     // Server stuff: use express instead of http.createServer
     private server = express();
-    private port = 8080;
     private router = express.Router();
 
     constructor(db) {
@@ -23,20 +22,20 @@ export class MyServer {
 	// Serve static pages from a particular path.
 	this.server.use('/', express.static('html'));
 
-	this.server.use(express.json());//for post
+	// this.server.use(express.json());//for post
 
-	// Set a single handler for a route.
-	this.router.post('/users/:userId/create', this.createHandler.bind(this));
-	// Set multiple handlers for a route, in sequence.
-	this.router.post('/users/:userId/read',   [this.errorHandler.bind(this), this.readHandler.bind(this) ]);
-	this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
-	this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
-	// Set a fall-through handler if nothing matches.
-	this.router.post('*', async (request, response) => {
+	// // Set a single handler for a route.
+	// this.router.post('/users/:userId/create', this.createHandler.bind(this));
+	// // Set multiple handlers for a route, in sequence.
+	// this.router.post('/users/:userId/read',   [this.errorHandler.bind(this), this.readHandler.bind(this) ]);
+	// this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
+	// this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
+	// // Set a fall-through handler if nothing matches.
+	this.router.get('*', async (request, response) => {
 	    response.send(JSON.stringify({ "result" : "command-not-found" }));
 	});
-	// Start up the counter endpoint at '/counter'.
-	this.server.use('/counter', this.router);
+	// // Start up the counter endpoint at '/counter'.
+	// this.server.use('/counter', this.router);
     }
 
     private async errorHandler(request, response, next) : Promise<void> {

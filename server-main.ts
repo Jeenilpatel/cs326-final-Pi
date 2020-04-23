@@ -6,4 +6,4 @@ import { MyServer } from './myserver-routing';
 const theDatabase = new Database('TESTING'); // CHANGE THIS
 const theServer = new MyServer(theDatabase);
 
-theServer.listen(process.env.port);
+theServer.listen(process.env.PORT);
