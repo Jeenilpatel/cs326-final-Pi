@@ -1,7 +1,7 @@
 import { Database } from "../mongo-database";
 
 //URL
-//const url = "https://fast-spire-83581.herokuapp.com"; // NOTE NEW URL
+const url = "https://thawing-inlet-12172.herokuapp.com"; // NOTE NEW URL
 
 //Interactive Map
 
