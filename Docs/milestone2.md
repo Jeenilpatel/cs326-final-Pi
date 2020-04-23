@@ -110,6 +110,9 @@ JS Functions Used:
 login(): reads in the entered username and password fields. Will later pull from database to find the user and log them in.
 
 
+3. Herkou App Link: https://thawing-inlet-12172.herokuapp.com/index.html
+
+
 Breakdown of the divison of labor:
 
 Thomas Guaetta:

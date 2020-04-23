@@ -1,5 +1,3 @@
-import { Database } from "../mongo-database";
-
 //URL
 const url = "https://thawing-inlet-12172.herokuapp.com"; // NOTE NEW URL
 
