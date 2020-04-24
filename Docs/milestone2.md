@@ -29,6 +29,7 @@ signUp: reads in the entered username and password fields. Will later save it to
 
 HTML Screenshot:
 ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Home%20Page.png "Home Page HTML")
+![HomePage2](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/HomePagePopup.JPG "Home Page popup")
 
 
 2. /Pokedex_Page.html
@@ -101,9 +102,10 @@ repeat: checks for if type1 and type2 are both the same selected type, and sets 
 
 
 6. /Login_Page.html
-This will make calls to the database and check for the user input credentials and let the user login to the account. It has an input for Username and Password
+This will make calls to the database and check for the user input credentials and let the user login to the account. It has an input for Username and Password & will read in/confirm if you input them correctly.
 
 ![Login Page](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Login.png "Login")
+![Login Page2](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Login%Popup.png "Login Page popup")
 
 JS Functions Used:
 
@@ -122,6 +124,7 @@ Thomas Guaetta:
 4. Condensed the Javascript files into one
 5. Worked on getting the project onto heroku
 6. Created various functions to be used with the database (in milestone 3)
+7. Added popups for login/signup to confirm the user entered their information
 
 Jeneil Patel:
 1. Worked on the PokedexPage client side JS and CSS 
