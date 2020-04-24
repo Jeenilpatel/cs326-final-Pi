@@ -105,7 +105,7 @@ repeat: checks for if type1 and type2 are both the same selected type, and sets 
 This will make calls to the database and check for the user input credentials and let the user login to the account. It has an input for Username and Password & will read in/confirm if you input them correctly.
 
 ![Login Page](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Login.png "Login")
-![Login Page2](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Login%Popup.png "Login Page popup")
+![Login Page2](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone2%20Images/Login%20Popup.PNG "Login Page popup")
 
 JS Functions Used:
 
