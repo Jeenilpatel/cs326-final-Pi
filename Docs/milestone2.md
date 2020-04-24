@@ -129,10 +129,12 @@ Thomas Guaetta:
 Jeneil Patel:
 1. Worked on the PokedexPage client side JS and CSS 
 2. Help implemeting creating parts of the teams page backend JS and and client side intractions along with the HTML and CSS
-3. Worked on the routing stuff 
-4. Made markdown file and added screenshots 
-5. Helped with setting up database stuff
-6. Created a MongoDB databse in order to save infomration about the Users and information associated wiht them.
+3. Created and wrote the setup.md file
+4. Worked on the routing stuff 
+5. Made markdown file and added screenshots 
+6. Helped with setting up database stuff
+7. Created a MongoDB databse in order to save infomration about the Users and information associated wiht them.
+8. Deployed the Project on Heroku
 
 Anthony Hong:
 1. Helped with markdown file.
