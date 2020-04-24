@@ -56,13 +56,13 @@ closePopup() => Simply closes the popup when Pokemon is selcted if the X is clic
 
 
 3. /Team_Page.html
-The teams page is what will be the only users who have logged in can use. It will be a page where you can create Teams, name the teams, Edit, update the teams and even delete the teams. It will save the data associated with each user and Team on the database. 
+The teams page is what will be the only users who have logged in can use. It will be a page where you can create Teams, name the teams, Edit, update the teams and even delete the teams. It will save the data associated with each user and Team on the database.
 
 JS Functions Used:
 
 Create Team: The user can choose any time name they desire, along with any Pokemon, that they want on the team. Once the user has put the ID # associated with the Pokemon they can hit create team - Once they hit create team the name of the team should be viewable on the page. 
 
-View Team: They can use the View Team button to retrieve the team again or view the team using that button, it will make a call to the database and fetch the ID of the associated Pokemon on that team and replace the shaking Pokeball with the correct Pokemono on that team. 
+View Team: They can use the View Team button to retrieve the team again or view the team using that button, it will make a call to the database and fetch the ID of the associated Pokemon on that team and replace the shaking Pokeball with the correct Pokemono on that team. In order to see example/test type the name "Test" (case sensitive) in the team name field and press "view"
 
 Update Team: This can be used after you create the Team. You can use the View Team button that will make a call to the Database and show you the team, and once you change the ID of the Pokemon you wish to change it will update and save the team accordingly. 
 
