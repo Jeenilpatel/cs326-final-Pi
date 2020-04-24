@@ -63,17 +63,25 @@
                 </div>
 
                 <br>
-                <button onclick="signUp()" class="btn btn-default">Sign Up</button>
+                <button id = "myBtn" onclick="signUp()" class="btn btn-default" type = 'button'>Sign Up</button>
                 <a href = "Login_Page.html" type="button" class="btn btn-default">Already Have an Account?</a>
             </div>
         </form>
-
-  <!-- Script Call -->
-  <script src = "client.js"></script>
-
     </div>
-
 </div>
+
+<!-- The popup Notification -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id = modalOutput></p>
+    </div>
+</div>
+
+<!-- Script Call -->
+<script src = "client.js"></script>
+
+
 
 </html>
 

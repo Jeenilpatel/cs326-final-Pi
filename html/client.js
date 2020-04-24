@@ -369,7 +369,7 @@ function teamCreate() {
 	// }
     // })();
 
-    document.getElementById("output").innerHTML =  teamName + "  Created!";
+    document.getElementById("output").innerHTML = "Team '" + teamName + "'  Created!";
 }
 
 var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
@@ -403,7 +403,7 @@ function teamRead() {
     }
     // })();
 
-    document.getElementById("output").innerHTML =  teamName + "  Team";
+    document.getElementById("output").innerHTML = "Viewing Team '" + teamName + "'!";
 }
 
 function teamUpdate(){
@@ -434,7 +434,7 @@ function teamUpdate(){
             fetchPokemon(document.getElementById("PokeID6").value, 'pokemon6', 'pokemon6_Name');
         }
 
-       document.getElementById("output").innerHTML = teamName + "  Updated!";
+       document.getElementById("output").innerHTML = "Team '" + teamName + "'  Updated!";
     };
 
     function teamDelete(){
@@ -459,7 +459,7 @@ function teamUpdate(){
 
     
 
-       document.getElementById("output").innerHTML = teamName + "  Deleted!";
+       document.getElementById("output").innerHTML = "Team '" + teamName + "'  Deleted!";
 
     }
 
@@ -495,14 +495,55 @@ async function getData(){
 
     console.log(data);
 }
+
+//Reads in username & password fields and notifies user of signup
 function signUp() {
-    let username = document.getElementById(userName_Input);
-    let password = document.getElementById(password_Input);
-    //will eventually save to database
+    console.log("signUp function")
+    let username = document.getElementById("userName_Input").value;
+    let password = document.getElementById("password_Input").value;
+    console.log(username)
+    modal.style.display = "block";
+    if(username != "" && password != ""){
+        document.getElementById("modalOutput").innerHTML = "User " + username + " signed up!"
+    }
+    else{
+        document.getElementById("modalOutput").innerHTML = "Please enter a username & password to sign up!"
+    }
+    //will eventually save to database & check for user
 }
 
-function login() {
-    let username = document.getElementById(userName_Input);
-    let password = document.getElementById(password_Input);
+function signIn() {
+    let username = document.getElementById("userName_Input").value;
+    let password = document.getElementById("password_Input").value;
+    console.log(username)
+    modal.style.display = "block";
+    if(username != "" && password != ""){
+        document.getElementById("modalOutput").innerHTML = "User " + username + " Signed In!"
+    }
+    else{
+        document.getElementById("modalOutput").innerHTML = "Please enter a username & password to sign in!"
+    }
     //will eventually pull from database
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+    
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    console.log("modalClose")
+  }
 }
