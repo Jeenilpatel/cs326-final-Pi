@@ -34,11 +34,11 @@ export class Database {
 	})();
     }
 
-    public async put(key: string) : Promise<void> {
+    public async putTeam(key: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number) : Promise<void> {
         let db = this.client.db(this.dbName);
         let collection = db.collection(this.collectionName);
-        console.log("put: key = " + key);
-        let result = await collection.updateOne({'name' : key}, { 'upsert' : true } );
+        console.log("creating: teamName = " + key);
+        let result = await collection.updateOne({'teamname' : key}, {$set: {'pokemon1': pokemon1, 'pokemon2': pokemon2,  'pokemon3': pokemon3, 'pokemon4': pokemon4, 'pokemon5': pokemon5, 'pokemon6': pokemon6}}, { 'upsert' : true } );
         console.log("result = " + result);
 	}
 	
