@@ -1,10 +1,10 @@
 export class Database {
 
     private MongoClient = require('mongodb').MongoClient;
-	private uri = "mongodb+srv://Jeenil:1234@cs326finalproject-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
+	private uri = "mongodb+srv://Jeenil:1234@cs326-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
     private client;
     private collectionName : string;
-    private dbName : string = "cs326FinalProject";
+    private dbName : string = "csTesting";
 
     constructor(collectionName) {
 	this.collectionName = collectionName;
@@ -40,7 +40,7 @@ export class Database {
         console.log("creating: teamName = " + key);
         let result = await collection.updateOne({'teamname' : key}, {$set: {'pokemon1': pokemon1, 'pokemon2': pokemon2,  'pokemon3': pokemon3, 'pokemon4': pokemon4, 'pokemon5': pokemon5, 'pokemon6': pokemon6}}, { 'upsert' : true } );
         console.log("result = " + result);
-	}
+    }
 	
     public async get(key: string) : Promise<string> {
 		let db = this.client.db(this.dbName); // this.level(this.dbFile);

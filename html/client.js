@@ -1,5 +1,7 @@
 //URL
-const url = "https://thawing-inlet-12172.herokuapp.com";
+//const url = "https://thawing-inlet-12172.herokuapp.com";
+
+const url = "http://localhost:8080/counter";
 
 //Interactive Map
 
@@ -347,29 +349,43 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 // }
 
 //Creating a team on the database
-function teamCreate() {
-    fetchPokemon(document.getElementById("PokeID1").value, 'pokemon1', 'pokemon1_Name');
-    fetchPokemon(document.getElementById("PokeID2").value, 'pokemon2', 'pokemon2_Name');
-    fetchPokemon(document.getElementById("PokeID3").value, 'pokemon3', 'pokemon3_Name');
-    fetchPokemon(document.getElementById("PokeID4").value, 'pokemon4', 'pokemon4_Name');
-    fetchPokemon(document.getElementById("PokeID5").value, 'pokemon5', 'pokemon5_Name');
-    fetchPokemon(document.getElementById("PokeID6").value, 'pokemon6', 'pokemon6_Name');
 
-    // (async () => {
-	let teamName = document.getElementById("Team-Name").value;
-	// // let userName = document.getElementById("username").value;
-	// const newURL = url + "/create?name=" + teamName;
-	// console.log("counterCreate: fetching " + newURL);
-	// const resp = await fetch(newURL);
-	// const j = await resp.json();
-	// if (j['result'] !== 'error') {
-	//     document.getElementById("output").innerHTML = "101: <b>" + teamName + " created.</b>";
-	// } else {
-	//     document.getElementById("output").innerHTML = "100: " + teamName + " not found.</b>";
-	// }
-    // })();
+function createCounter() {
+    (async () => {
+    
+        PokeID1 = document.getElementById("PokeID1").value
+        PokeID2 = document.getElementById("PokeID2").value
+        PokeID3 = document.getElementById("PokeID3").value
+        PokeID4 = document.getElementById("PokeID4").value
+        PokeID5 = document.getElementById("PokeID5").value
+        PokeID6 = document.getElementById("PokeID6").value
 
-    document.getElementById("output").innerHTML = "Team '" + teamName + "'  Created!";
+    fetchPokemon(PokeID1, 'pokemon1', 'pokemon1_Name');
+    fetchPokemon(PokeID2, 'pokemon2', 'pokemon2_Name');
+    fetchPokemon(PokeID3, 'pokemon3', 'pokemon3_Name');
+    fetchPokemon(PokeID4, 'pokemon4', 'pokemon4_Name');
+    fetchPokemon(PokeID5, 'pokemon5', 'pokemon5_Name');
+    fetchPokemon(PokeID6, 'pokemon6', 'pokemon6_Name');
+
+    
+    let counterName = document.getElementById("Team-Name").value;
+    let userName = document.getElementById("username").value;
+    const newURL = url + "/users/" + userName + "/create?teamname=" + counterName + "?pokemon1" + PokeID1 + "?pokemon2" + PokeID2 + "?pokemon3" + PokeID3 + "?pokemon4" + PokeID4 + "?pokmeon5" + PokeID5 + "?pokemon6" + PokeID6;
+    console.log("counterCreate: fetching " + newURL);
+  //
+    const resp = await fetch(newURL);
+
+    const j = await resp.json();
+        if (j['result'] !== 'error') {
+            document.getElementById("output").innerHTML = "101: <b>" + userName + ", " + counterName + " created.</b>";
+        } else {
+            document.getElementById("output").innerHTML = "100: " + userName + ", " + counterName + " not found.</b>";
+        }
+        })();
+        
+
+    //document.getElementById("output").innerHTML = "Team '" + counterName + "'  Created!";
+
 }
 
 var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}

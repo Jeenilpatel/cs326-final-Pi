@@ -3,7 +3,7 @@
 import { Database } from './mongo-database';
 import { MyServer } from './myserver-routing';
 
-const theDatabase = new Database('TESTING'); // CHANGE THIS
+const theDatabase = new Database('jeenilpatel'); // CHANGE THIS
 const theServer = new MyServer(theDatabase);
 
-theServer.listen(process.env.PORT);
+theServer.listen(8080);

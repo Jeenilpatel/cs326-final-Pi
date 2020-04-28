@@ -22,11 +22,11 @@ export class MyServer {
 	// Serve static pages from a particular path.
 	this.server.use('/', express.static('html'));
 
-	// this.server.use(express.json());//for post
+	this.server.use(express.json());//for post
 
-	// // Set a single handler for a route.
-	// this.router.post('/users/:userId/create', this.createHandler.bind(this));
-	// // Set multiple handlers for a route, in sequence.
+	// Set a single handler for a route.
+	this.router.post('/users/:userId/create', this.createHandler.bind(this));
+	// Set multiple handlers for a route, in sequence.
 	// this.router.post('/users/:userId/read',   [this.errorHandler.bind(this), this.readHandler.bind(this) ]);
 	// this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
 	// this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
@@ -34,13 +34,13 @@ export class MyServer {
 	this.router.get('*', async (request, response) => {
 	    response.send(JSON.stringify({ "result" : "command-not-found" }));
 	});
-	// // Start up the counter endpoint at '/counter'.
-	// this.server.use('/counter', this.router);
+	// Start up the counter endpoint at '/counter'.
+	this.server.use('/counter', this.router);
     }
 
     private async errorHandler(request, response, next) : Promise<void> {
 	let value : boolean = await this.theDatabase.isFound(request.params['userId']+"-"+request.body.name);
-//	console.log("result from database.isFound: " + JSON.stringify(value));
+	console.log("result from database.isFound: " + JSON.stringify(value));
 	if (!value) {
 	    response.write(JSON.stringify({'result' : 'error'}));
 	    response.end();
@@ -50,60 +50,65 @@ export class MyServer {
     }
     
     private async createHandler(request, response) : Promise<void> {
-	await this.createCounter(request.params['userId']+"-"+request.body.name, response);
+	await this.createCounter(request.params['userId']+ "-" + request.body.teamName,request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6,response);
     }
 
-    private async readHandler(request, response): Promise<void> {
-	console.log(request.params['userId']);
-	await this.readCounter(request.params['userId']+"-"+request.body.name, response);
-    }
+    // private async readHandler(request, response): Promise<void> {
+	// console.log(request.params['userId']);
+	// await this.readCounter(request.params['userId']+"-"+request.body.name, response);
+    // }
 
-    private async updateHandler(request, response) : Promise<void> {
-	await this.updateCounter(request.params['userId']+"-"+request.body.name, request.body.value, response);
-    }
+    // private async updateHandler(request, response) : Promise<void> {
+	// await this.updateCounter(request.params['userId']+"-"+request.body.name, request.body.value, response);
+    // }
 
-    private async deleteHandler(request, response) : Promise<void> {
-	await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
-    }
+    // private async deleteHandler(request, response) : Promise<void> {
+	// await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
+    // }
 
     public listen(port) : void  {
 		this.server.listen(port);
     }
 
-    public async createCounter(name: string, response) : Promise<void> {
-	console.log("creating counter named '" + name + "'");
-	await this.theDatabase.put(name, 0);
-	response.write(JSON.stringify({'result' : 'created',
-				       'name' : name,
-				       'value' : 0 }));
-	response.end();
-    }
-
+    public async createCounter(teamname: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
+		console.log("creating team '" + teamname + "'");
+		await this.theDatabase.putTeam(teamname, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
+		response.write(JSON.stringify({'team name' : teamname,
+						'pokemon 1' : pokemon1,
+						'pokemon 2' : pokemon2,
+						'pokemon 3' : pokemon3,
+						'pokemon 4' : pokemon4,
+						'pokemon 5' : pokemon5,
+						'pokemon 6' : pokemon6
+								}));
+		response.end();
+			}
+	
     public async errorCounter(name: string, response) : Promise<void> {
 	response.write(JSON.stringify({'result': 'error'}));
 	response.end();
     }
 
-    public async readCounter(name: string, response) : Promise<void> {
-	let value = await this.theDatabase.get(name);
-	response.write(JSON.stringify({'result' : 'read',
-				       'name' : name,
-				       'value' : value }));
-	response.end();
-    }
+    // public async readCounter(name: string, response) : Promise<void> {
+	// let value = await this.theDatabase.get(name);
+	// response.write(JSON.stringify({'result' : 'read',
+	// 			       'name' : name,
+	// 			       'value' : value }));
+	// response.end();
+    // }
 
-    public async updateCounter(name: string, value: number, response) : Promise<void> {
-	await this.theDatabase.put(name, value);
-	response.write(JSON.stringify({'result' : 'updated',
-				       'name' : name,
-				       'value' : value }));
-	response.end();
-    }
+    // public async updateCounter(name: string, value: number, response) : Promise<void> {
+	// await this.theDatabase.put(name, value);
+	// response.write(JSON.stringify({'result' : 'updated',
+	// 			       'name' : name,
+	// 			       'value' : value }));
+	// response.end();
+    // }
     
-    public async deleteCounter(name : string, response) : Promise<void> {
-	await this.theDatabase.del(name);
-	response.write(JSON.stringify({'result' : 'deleted',
-				       'value'  : name }));
-	response.end();
-    }
+    // public async deleteCounter(name : string, response) : Promise<void> {
+	// await this.theDatabase.del(name);
+	// response.write(JSON.stringify({'result' : 'deleted',
+	// 			       'value'  : name }));
+	// response.end();
+    // }
 };
