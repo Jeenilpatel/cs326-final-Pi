@@ -71,8 +71,7 @@ export class MyServer {
 		this.server.listen(port);
 	}
 	
-    public async createCounter(name: string, response, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number) : Promise<void> {
-		console.log("NAME = " + name);
+    public async createCounter(name: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
 		await this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
 		response.write(JSON.stringify({'result' : 'created',
 						'name' : name,
