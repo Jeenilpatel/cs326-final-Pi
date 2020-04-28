@@ -8,6 +8,7 @@ export class MyServer {
 
     // Server stuff: use express instead of http.createServer
     private server = express();
+    //private port = 8080;
     private router = express.Router();
 
     constructor(db) {
@@ -20,7 +21,7 @@ export class MyServer {
 	    next();
 	});
 	// Serve static pages from a particular path.
-	this.server.use('/', express.static('html'));
+	this.server.use('/', express.static('./html'));
 
 	this.server.use(express.json());//for post
 
@@ -30,8 +31,8 @@ export class MyServer {
 	// this.router.post('/users/:userId/read',   [this.errorHandler.bind(this), this.readHandler.bind(this) ]);
 	// this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
 	// this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
-	// // Set a fall-through handler if nothing matches.
-	this.router.get('*', async (request, response) => {
+	// Set a fall-through handler if nothing matches.
+	this.router.post('*', async (request, response) => {
 	    response.send(JSON.stringify({ "result" : "command-not-found" }));
 	});
 	// Start up the counter endpoint at '/counter'.
@@ -40,7 +41,7 @@ export class MyServer {
 
     private async errorHandler(request, response, next) : Promise<void> {
 	let value : boolean = await this.theDatabase.isFound(request.params['userId']+"-"+request.body.name);
-	console.log("result from database.isFound: " + JSON.stringify(value));
+	//console.log("result from database.isFound: " + JSON.stringify(value));
 	if (!value) {
 	    response.write(JSON.stringify({'result' : 'error'}));
 	    response.end();
@@ -72,8 +73,9 @@ export class MyServer {
 
     public async createCounter(teamname: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
 		console.log("creating team '" + teamname + "'");
-		await this.theDatabase.putTeam(teamname, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
-		response.write(JSON.stringify({'team name' : teamname,
+		await this.theDatabase.putTeam(teamname, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6, 0);
+		response.write(JSON.stringify({'result' : 'created',
+						'team name' : teamname,
 						'pokemon 1' : pokemon1,
 						'pokemon 2' : pokemon2,
 						'pokemon 3' : pokemon3,

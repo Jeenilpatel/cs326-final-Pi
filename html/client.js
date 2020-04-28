@@ -348,17 +348,35 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 //     teamCreate();
 // }
 
-//Creating a team on the database
+// NEW: helper method for posting data
+async function postData(url, data) {
+    const resp = await fetch(url,
+        {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            body: JSON.stringify(data)
+        });
+    return resp;
+}
 
+
+
+//Creating a team on the database
 function createCounter() {
     (async () => {
     
-        PokeID1 = document.getElementById("PokeID1").value
-        PokeID2 = document.getElementById("PokeID2").value
-        PokeID3 = document.getElementById("PokeID3").value
-        PokeID4 = document.getElementById("PokeID4").value
-        PokeID5 = document.getElementById("PokeID5").value
-        PokeID6 = document.getElementById("PokeID6").value
+        let PokeID1 = document.getElementById("PokeID1").value
+        let PokeID2 = document.getElementById("PokeID2").value
+        let PokeID3 = document.getElementById("PokeID3").value
+        let PokeID4 = document.getElementById("PokeID4").value
+        let PokeID5 = document.getElementById("PokeID5").value
+        let PokeID6 = document.getElementById("PokeID6").value
 
     fetchPokemon(PokeID1, 'pokemon1', 'pokemon1_Name');
     fetchPokemon(PokeID2, 'pokemon2', 'pokemon2_Name');
@@ -370,20 +388,24 @@ function createCounter() {
     
     let counterName = document.getElementById("Team-Name").value;
     let userName = document.getElementById("username").value;
-    const newURL = url + "/users/" + userName + "/create?teamname=" + counterName + "?pokemon1" + PokeID1 + "?pokemon2" + PokeID2 + "?pokemon3" + PokeID3 + "?pokemon4" + PokeID4 + "?pokmeon5" + PokeID5 + "?pokemon6" + PokeID6;
-    console.log("counterCreate: fetching " + newURL);
-  //
-    const resp = await fetch(newURL);
 
-    const j = await resp.json();
-        if (j['result'] !== 'error') {
-            document.getElementById("output").innerHTML = "101: <b>" + userName + ", " + counterName + " created.</b>";
-        } else {
-            document.getElementById("output").innerHTML = "100: " + userName + ", " + counterName + " not found.</b>";
-        }
-        })();
+    const data = { 'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
+	const newURL = url + "/users/" + userName + "/create" ;
+
+   // const newURL = url + "/users/" + userName + "/create?teamname=" + counterName + "?pokemon1" + PokeID1 + "?pokemon2" + PokeID2 + "?pokemon3" + PokeID3 + "?pokemon4" + PokeID4 + "?pokmeon5" + PokeID5 + "?pokemon6" + PokeID6;
+   //console.log("counterCreate: fetching " + newURL);
+  
+    //const resp = await fetch(newURL);
+
+    const resp = await postData(newURL, data);
+	const j = await resp.json();
+	if (j['result'] !== 'error') {
+	    document.getElementById("output").innerHTML = "101: <b>" + userName + ", " + counterName + " created.</b>";
+	} else {
+	    document.getElementById("output").innerHTML = "100: " + userName + ", " + counterName + " not found.</b>";
+	}
+	})();
         
-
     //document.getElementById("output").innerHTML = "Team '" + counterName + "'  Created!";
 
 }
