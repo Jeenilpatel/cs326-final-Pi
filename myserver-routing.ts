@@ -51,8 +51,8 @@ export class MyServer {
     }
     
     private async createHandler(request, response) : Promise<void> {
-	await this.createCounter(request.params['userId']+ "-" + request.body.teamName,request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6,response);
-    }
+	await this.createCounter(request.params['userId'] + "-" + request.body.name, request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6, response);
+	}
 
     // private async readHandler(request, response): Promise<void> {
 	// console.log(request.params['userId']);
@@ -69,26 +69,27 @@ export class MyServer {
 
     public listen(port) : void  {
 		this.server.listen(port);
-    }
-
-    public async createCounter(teamname: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
-		console.log("creating team '" + teamname + "'");
-		await this.theDatabase.putTeam(teamname, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6, 0);
+	}
+	
+    public async createCounter(name: string, response, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number) : Promise<void> {
+		console.log("NAME = " + name);
+		await this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
 		response.write(JSON.stringify({'result' : 'created',
-						'team name' : teamname,
+						'name' : name,
 						'pokemon 1' : pokemon1,
 						'pokemon 2' : pokemon2,
 						'pokemon 3' : pokemon3,
 						'pokemon 4' : pokemon4,
 						'pokemon 5' : pokemon5,
 						'pokemon 6' : pokemon6
-								}));
-		response.end();
 			}
+		));
+		response.end();
+	}
 	
     public async errorCounter(name: string, response) : Promise<void> {
-	response.write(JSON.stringify({'result': 'error'}));
-	response.end();
+		response.write(JSON.stringify({'result': 'error'}));
+		response.end();
     }
 
     // public async readCounter(name: string, response) : Promise<void> {

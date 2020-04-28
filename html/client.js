@@ -315,7 +315,6 @@ function repeat(){
 function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
     const promises = [];
-        console.log("test")
         const url = `https://pokeapi.co/api/v2/pokemon/` + PokeID;
 
         promises.push(fetch(url).then((res) => res.json() ) );
@@ -337,17 +336,6 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
     );
 };
 
-
-// function HTML_Image_Update(){
-//     fetchPokemon('PokeID1', 'pokemon1', 'pokemon1_Name');
-//     fetchPokemon('PokeID2', 'pokemon2', 'pokemon2_Name');
-//     fetchPokemon('PokeID3', 'pokemon3', 'pokemon3_Name');
-//     fetchPokemon('PokeID4', 'pokemon4', 'pokemon4_Name');
-//     fetchPokemon('PokeID5', 'pokemon5', 'pokemon5_Name');
-//     fetchPokemon('PokeID6', 'pokemon6', 'pokemon6_Name');
-//     teamCreate();
-// }
-
 // NEW: helper method for posting data
 async function postData(url, data) {
     const resp = await fetch(url,
@@ -365,18 +353,16 @@ async function postData(url, data) {
     return resp;
 }
 
-
-
 //Creating a team on the database
 function createCounter() {
     (async () => {
     
-        let PokeID1 = document.getElementById("PokeID1").value
-        let PokeID2 = document.getElementById("PokeID2").value
-        let PokeID3 = document.getElementById("PokeID3").value
-        let PokeID4 = document.getElementById("PokeID4").value
-        let PokeID5 = document.getElementById("PokeID5").value
-        let PokeID6 = document.getElementById("PokeID6").value
+    let PokeID1 = document.getElementById("PokeID1").value
+    let PokeID2 = document.getElementById("PokeID2").value
+    let PokeID3 = document.getElementById("PokeID3").value
+    let PokeID4 = document.getElementById("PokeID4").value
+    let PokeID5 = document.getElementById("PokeID5").value
+    let PokeID6 = document.getElementById("PokeID6").value
 
     fetchPokemon(PokeID1, 'pokemon1', 'pokemon1_Name');
     fetchPokemon(PokeID2, 'pokemon2', 'pokemon2_Name');
@@ -385,29 +371,23 @@ function createCounter() {
     fetchPokemon(PokeID5, 'pokemon5', 'pokemon5_Name');
     fetchPokemon(PokeID6, 'pokemon6', 'pokemon6_Name');
 
-    
     let counterName = document.getElementById("Team-Name").value;
     let userName = document.getElementById("username").value;
 
-    const data = { 'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
-	const newURL = url + "/users/" + userName + "/create" ;
-
-   // const newURL = url + "/users/" + userName + "/create?teamname=" + counterName + "?pokemon1" + PokeID1 + "?pokemon2" + PokeID2 + "?pokemon3" + PokeID3 + "?pokemon4" + PokeID4 + "?pokmeon5" + PokeID5 + "?pokemon6" + PokeID6;
-   //console.log("counterCreate: fetching " + newURL);
-  
-    //const resp = await fetch(newURL);
+    const data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
+    
+    const newURL = url + "/users/" + userName + "/create";
+    console.log("counterCreate: fetching " + newURL);
 
     const resp = await postData(newURL, data);
-	const j = await resp.json();
+    const j = await resp.json();
+    
 	if (j['result'] !== 'error') {
 	    document.getElementById("output").innerHTML = "101: <b>" + userName + ", " + counterName + " created.</b>";
 	} else {
 	    document.getElementById("output").innerHTML = "100: " + userName + ", " + counterName + " not found.</b>";
 	}
 	})();
-        
-    //document.getElementById("output").innerHTML = "Team '" + counterName + "'  Created!";
-
 }
 
 var testTeam = {name: "Test", pokemon1: 1, pokemon2: 2, pokemon3: 3, pokemon4: 4, pokemon5: 5, pokemon6: 6}
@@ -502,25 +482,6 @@ function teamUpdate(){
     }
 
 
-//Get the button
-var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
 
 async function getData(){
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
