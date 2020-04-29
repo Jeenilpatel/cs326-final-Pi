@@ -1,7 +1,7 @@
 //URL
-//const url = "https://thawing-inlet-12172.herokuapp.com";
+const url = "https://thawing-inlet-12172.herokuapp.com";
 
-const url = "http://localhost:8080/counter";
+//const url = "http://localhost:8080/counter";
 
 //Interactive Map
 

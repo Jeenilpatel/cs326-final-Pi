@@ -40,8 +40,17 @@ var Database = /** @class */ (function () {
     function Database(collectionName) {
         var _this = this;
         this.MongoClient = require('mongodb').MongoClient;
-        this.uri = "mongodb+srv://Jeenil:1234@cs326-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
         this.dbName = "csTesting";
+        var secrets;
+        var password;
+        if (!process.env.PASSWORD) {
+            secrets = require('./secrets.json');
+            password = secrets.password;
+        }
+        else {
+            password = process.env.PASSWORD;
+        }
+        this.uri = password;
         this.collectionName = collectionName;
         this.client = new this.MongoClient(this.uri, { useNewUrlParser: true });
         // Open up a connection to the client.
@@ -60,7 +69,6 @@ var Database = /** @class */ (function () {
            (async () => {
            // code goes here
            })();
-    
         */
         (function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -116,14 +124,24 @@ var Database = /** @class */ (function () {
             });
         });
     };
-    // public async del(key: string) : Promise<void> {
-    // 	let db = this.client.db(this.dbName);
-    // 	let collection = db.collection(this.collectionName);
-    // 	console.log("delete: key = " + key);
-    // 	let result = await collection.deleteOne({'name' : key });
-    // 	console.log("result = " + result.pokemon1);
-    // 	// await this.db.del(key);
-    // }
+    Database.prototype.del = function (key) {
+        return __awaiter(this, void 0, void 0, function () {
+            var db, collection, result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        db = this.client.db(this.dbName);
+                        collection = db.collection(this.collectionName);
+                        console.log("delete: key = " + key);
+                        return [4 /*yield*/, collection.deleteOne({ 'name': key })];
+                    case 1:
+                        result = _a.sent();
+                        console.log("result = " + result);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     Database.prototype.isFound = function (key) {
         return __awaiter(this, void 0, void 0, function () {
             var v;
@@ -134,6 +152,7 @@ var Database = /** @class */ (function () {
                         return [4 /*yield*/, this.getTeam(key)];
                     case 1:
                         v = _a.sent();
+                        console.log("is found result = " + JSON.stringify(v));
                         if (v === null) {
                             return [2 /*return*/, false];
                         }

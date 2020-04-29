@@ -62,7 +62,7 @@ var MyServer = /** @class */ (function () {
         // Set multiple handlers for a route, in sequence.
         this.router.post('/users/:userId/read', [this.errorHandler.bind(this), this.readHandler.bind(this)]);
         this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
-        // this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
+        this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
         // Set a fall-through handler if nothing matches.
         this.router.post('*', function (request, response) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -135,9 +135,18 @@ var MyServer = /** @class */ (function () {
             });
         });
     };
-    // private async deleteHandler(request, response) : Promise<void> {
-    // await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
-    // }
+    MyServer.prototype.deleteHandler = function (request, response) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteCounter(request.params['userId'] + "-" + request.body.name, response)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     MyServer.prototype.listen = function (port) {
         this.server.listen(port);
     };
@@ -212,6 +221,21 @@ var MyServer = /** @class */ (function () {
                             'pokemon 5': pokemon5,
                             'pokemon 6': pokemon6
                         }));
+                        response.end();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyServer.prototype.deleteCounter = function (name, response) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.theDatabase.del(name)];
+                    case 1:
+                        _a.sent();
+                        response.write(JSON.stringify({ 'result': 'deleted',
+                            'value': name }));
                         response.end();
                         return [2 /*return*/];
                 }
