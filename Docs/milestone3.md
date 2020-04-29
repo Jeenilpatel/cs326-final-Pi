@@ -40,4 +40,4 @@ Jeenil Patel:
 4. Created the mongoDB database for the team and did the Reveal Config variables (password stuff)
 
 Anthony Hong:
-Worked to create the deleteTeam function in order for the users to delete an already existing team
+1. Worked to create the deleteTeam function in order for the users to delete an already existing team
