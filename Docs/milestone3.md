@@ -40,3 +40,4 @@ Worked alongside Thomas (with help from William) in order to get the secrets.jso
 Created the mongoDB database for the team and did the Reveal Config variables (password stuff)
 
 Anthony Hong:
+Worked to create the deleteTeam function in order for the users to delete an already existing team
