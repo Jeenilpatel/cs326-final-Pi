@@ -34,5 +34,9 @@ Worked alongside Jeenil (with help from William) in order to get the secrets.jso
 Polished off HTML & CSS for the pages to be sure the site looks the best it can
 
 Jeenil Patel:
+Worked with Thomas to get the teamCreate function working for it to register to MongoDB correctly and write it to the Database
+Worked to create the readTeam function in order for the users to view the team
+Worked alongside Thomas (with help from William) in order to get the secrets.json to work for the purpose of holding the mongoDB link
+Created the mongoDB database for the team and did the Reveal Config variables (password stuff)
 
 Anthony Hong:
