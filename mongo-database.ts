@@ -1,13 +1,21 @@
 export class Database {
 
 	private MongoClient = require('mongodb').MongoClient;
-	
-	//private uri = "mongodb+srv://Jeenil:1234@cs326-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
+	private uri;
     private client;
     private collectionName : string;
     private dbName : string = "csTesting";
 
     constructor(collectionName) {
+	let secrets;
+	let password;
+	if (!process.env.PASSWORD) {
+	secrets = require('./secrets.json');
+	password = secrets.password;
+	} else {
+		password = process.env.PASSWORD;
+	}
+	this.uri = password;
 	this.collectionName = collectionName;
 	this.client = new this.MongoClient(this.uri, { useNewUrlParser: true });
 	// Open up a connection to the client.
@@ -27,7 +35,6 @@ export class Database {
 	   (async () => {
 	   // code goes here
 	   })();
-
     */
     
 	(async () => {
