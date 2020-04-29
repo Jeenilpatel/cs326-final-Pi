@@ -35,12 +35,25 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
 exports.__esModule = true;
 var Database = /** @class */ (function () {
+
     function Database(collectionName) {
         var _this = this;
         this.MongoClient = require('mongodb').MongoClient;
-        this.uri = "mongodb+srv://Jeenil:1234@cs326-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
+
+        let secrets;
+        let password;
+        if (!process.env.PASSWORD) {
+            secrets = require('./secrets.json');
+            password = secrets.password;
+        } else {
+            password = process.env.PASSWORD;
+        }
+
+        console.log(password);
+        this.uri = password;
         this.dbName = "csTesting";
         this.collectionName = collectionName;
         this.client = new this.MongoClient(this.uri, { useNewUrlParser: true });
