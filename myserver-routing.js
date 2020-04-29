@@ -139,7 +139,9 @@ var MyServer = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteCounter(request.params['userId'] + "-" + request.body.name, response)];
+                    case 0:
+                        console.log("ENTERS deleteHandler FUNCTION");
+                        return [4 /*yield*/, this.deleteCounter(request.params['userId'] + "-" + request.body.name, response)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -154,7 +156,9 @@ var MyServer = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6)];
+                    case 0:
+                        console.log("ENTERS createCounter FUNCTION");
+                        return [4 /*yield*/, this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6)];
                     case 1:
                         _a.sent();
                         response.write(JSON.stringify({ 'result': 'created',
