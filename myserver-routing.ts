@@ -1,3 +1,5 @@
+import { request } from "https";
+
 let http = require('http');
 let url = require('url');
 let express = require('express');
@@ -27,6 +29,7 @@ export class MyServer {
 
 	// Set a single handler for a route.
 	this.router.post('/users/:userId/create', this.createHandler.bind(this));
+	console.log(JSON.stringify(request));
 	// Set multiple handlers for a route, in sequence.
 	this.router.post('/users/:userId/read',   [this.errorHandler.bind(this), this.readHandler.bind(this) ]);
 	this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
