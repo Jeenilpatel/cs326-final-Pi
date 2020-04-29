@@ -1,7 +1,7 @@
 //URL
-const url = "https://thawing-inlet-12172.herokuapp.com";
+//const url = "https://thawing-inlet-12172.herokuapp.com";
 
-//const url = "http://localhost:8080/counter";
+const url = "http://localhost:8080/counter";
 
 //Interactive Map
 
@@ -412,48 +412,43 @@ function teamRead() {
         fetchPokemon(testTeam.pokemon4, 'pokemon4', 'pokemon4_Name');
         fetchPokemon(testTeam.pokemon5, 'pokemon5', 'pokemon5_Name');
         fetchPokemon(testTeam.pokemon6, 'pokemon6', 'pokemon6_Name');
-        document.getElementById("PokeID1").value = testTeam.pokemon1;
-        document.getElementById("PokeID2").value = testTeam.pokemon2;
-        document.getElementById("PokeID3").value = testTeam.pokemon3;
-        document.getElementById("PokeID4").value = testTeam.pokemon4;
-        document.getElementById("PokeID5").value = testTeam.pokemon5;
-        document.getElementById("PokeID6").value = testTeam.pokemon6;
     }
     // })();
 
     document.getElementById("output").innerHTML = "Viewing Team '" + teamName + "'!";
 }
 
-function teamUpdate(){
-    // (async () => {
-        let teamName = document.getElementById("Team-Name").value;
-        // let userName = document.getElementById("username").value;
-        // let counterValue = document.getElementById("countervalue").value;
-    
-        // const newURL = url + "/users/" + userName + "/update";
-        // console.log("counterUpdate: fetching " + newURL);
-        // let data = { 'name': counterName, 'value': counterValue};
-        // const resp = await postData(newURL, data);    
-        // const j = await resp.json();
-        // if (j['result'] !== 'error') {
-        //     document.getElementById("output").innerHTML = "301: <b>" + userName + ", " + counterName + " value = " + j['value'] + "</b>";
-        // } else {
-        //     document.getElementById("output").innerHTML = "300: " + userName + ", " + counterName + " not found.";
-        // }	
-        // })();
+function teamUpdate() {
+    (async () => {
+    let PokeID1 = document.getElementById("PokeID1").value
+    let PokeID2 = document.getElementById("PokeID2").value
+    let PokeID3 = document.getElementById("PokeID3").value
+    let PokeID4 = document.getElementById("PokeID4").value
+    let PokeID5 = document.getElementById("PokeID5").value
+    let PokeID6 = document.getElementById("PokeID6").value
 
+    fetchPokemon(PokeID1, 'pokemon1', 'pokemon1_Name');
+    fetchPokemon(PokeID2, 'pokemon2', 'pokemon2_Name');
+    fetchPokemon(PokeID3, 'pokemon3', 'pokemon3_Name');
+    fetchPokemon(PokeID4, 'pokemon4', 'pokemon4_Name');
+    fetchPokemon(PokeID5, 'pokemon5', 'pokemon5_Name');
+    fetchPokemon(PokeID6, 'pokemon6', 'pokemon6_Name');
 
-        if(teamName == testTeam.name){
-            fetchPokemon(document.getElementById("PokeID1").value, 'pokemon1', 'pokemon1_Name');
-            fetchPokemon(document.getElementById("PokeID2").value, 'pokemon2', 'pokemon2_Name');
-            fetchPokemon(document.getElementById("PokeID3").value, 'pokemon3', 'pokemon3_Name');
-            fetchPokemon(document.getElementById("PokeID4").value, 'pokemon4', 'pokemon4_Name');
-            fetchPokemon(document.getElementById("PokeID5").value, 'pokemon5', 'pokemon5_Name');
-            fetchPokemon(document.getElementById("PokeID6").value, 'pokemon6', 'pokemon6_Name');
-        }
+    let counterName = document.getElementById("Team-Name").value;
+    let userName = document.getElementById("username").value;
 
-       document.getElementById("output").innerHTML = "Team '" + teamName + "'  Updated!";
-    };
+	const newURL = url + "/users/" + userName + "/update";
+	console.log("counterUpdate: fetching " + newURL);
+	let data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
+	const resp = await postData(newURL, data);    
+	const j = await resp.json();
+	if (j['result'] !== 'error') {
+	    document.getElementById("output").innerHTML = "301: <b>" + userName + ", " + counterName + " updated! </b>";
+	} else {
+	    document.getElementById("output").innerHTML = "300: " + userName + ", " + counterName + " not found.";
+	}	
+    })();
+}
 
     function teamDelete(){
 
