@@ -29,7 +29,7 @@ export class MyServer {
 	this.router.post('/users/:userId/create', this.createHandler.bind(this));
 	// Set multiple handlers for a route, in sequence.
 	this.router.post('/users/:userId/read',   [this.errorHandler.bind(this), this.readHandler.bind(this) ]);
-	// this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
+	this.router.post('/users/:userId/update', [this.errorHandler.bind(this), this.updateHandler.bind(this)]);
 	// this.router.post('/users/:userId/delete', [this.errorHandler.bind(this), this.deleteHandler.bind(this)]);
 	// Set a fall-through handler if nothing matches.
 	this.router.post('*', async (request, response) => {
@@ -41,7 +41,6 @@ export class MyServer {
 
     private async errorHandler(request, response, next) : Promise<void> {
 	let value : boolean = await this.theDatabase.isFound(request.params['userId']+"-"+request.body.name);
-	//console.log("result from database.isFound: " + JSON.stringify(value));
 	if (!value) {
 	    response.write(JSON.stringify({'result' : 'error'}));
 	    response.end();
@@ -51,18 +50,19 @@ export class MyServer {
     }
     
     private async createHandler(request, response) : Promise<void> {
+	console.log("ENTERS createHandler FUNCTION");
 	await this.createCounter(request.params['userId'] + "-" + request.body.name, request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6, response);
 	}
 
     private async readHandler(request, response): Promise<void> {
-	console.log(request.params['userId']);
-	//console.log("name handler:" + request.body.name );
+	console.log("ENTERS readHandler FUNCTION");
 	await this.readCounter(request.params['userId'] + "-" +  request.body.name, response);
     }
 
-    // private async updateHandler(request, response) : Promise<void> {
-	// await this.updateCounter(request.params['userId']+"-"+request.body.name, request.body.value, response);
-    // }
+    private async updateHandler(request, response) : Promise<void> {
+	console.log("ENTERS updateHandler FUNCTION");
+	await this.updateCounter(request.params['userId'] + "-" + request.body.name, request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6, response);
+    }
 
     // private async deleteHandler(request, response) : Promise<void> {
 	// await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
@@ -93,30 +93,35 @@ export class MyServer {
     }
 
     public async readCounter(name: string, response) : Promise<void> {
-	console.log("name: " + name); 
-	let u,v,w,x,y,z = await this.theDatabase.getTeam(name);
-	console.log(u);
+	let value = await this.theDatabase.getTeam(name);
 	response.write(JSON.stringify({'result' : 'read',
 				       	'name' : name,
-						'pokemon 1' : u,
-						'pokemon 2' : v,
-						'pokemon 3' : w,
-						'pokemon 4' : x,
-						'pokemon 5' : y,
-						'pokemon 6' : z		
+						'pokemon 1' : value['pokemon1'],
+						'pokemon 2' : value['pokemon2'],
+						'pokemon 3' : value['pokemon3'],
+						'pokemon 4' : value['pokemon4'],
+						'pokemon 5' : value['pokemon5'],
+						'pokemon 6' : value['pokemon6'],
 		}
 	));	
-	console.log("REad counte :"  + response['pokemon 1']);
 	response.end();
     }
 
-    // public async updateCounter(name: string, value: number, response) : Promise<void> {
-	// await this.theDatabase.put(name, value);
-	// response.write(JSON.stringify({'result' : 'updated',
-	// 			       'name' : name,
-	// 			       'value' : value }));
-	// response.end();
-    // }
+    public async updateCounter(name: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
+	await this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
+	console.log("ENTERS updateCounter FUNCTION");
+	response.write(JSON.stringify({'result' : 'created',
+					'name' : name,
+					'pokemon 1' : pokemon1,
+					'pokemon 2' : pokemon2,
+					'pokemon 3' : pokemon3,
+					'pokemon 4' : pokemon4,
+					'pokemon 5' : pokemon5,
+					'pokemon 6' : pokemon6
+		}
+	));
+	response.end();
+    }
     
     // public async deleteCounter(name : string, response) : Promise<void> {
 	// await this.theDatabase.del(name);

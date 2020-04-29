@@ -35,6 +35,7 @@ export class Database {
     }
 
     public async putTeam(key: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number) : Promise<void> {
+		console.log("ENTERS putTeam FUNCTION");
 		let db = this.client.db(this.dbName);
         let collection = db.collection(this.collectionName);
         console.log("put: key = " + key + " pokemon1 = " + pokemon1 + " pokemon2 = " + pokemon2 + " pokemon3 = " + pokemon3 + " pokemon4 = " + pokemon4 + " pokemon5 = " + pokemon5 + " pokemon6 = " + pokemon6)
@@ -49,11 +50,8 @@ export class Database {
 		console.log("get: key = " + key);
 		let result = await collection.findOne({'name' : key });
 		console.log("get: returned " + JSON.stringify(result));
-	
 		if (result != null) {
-			console.log("GET TEAM: " + result.pokemon1)
-			return result.pokemon1, result.pokemon2, result.pokemon3, result.pokemon4, result.pokemon5, result.pokemon6;
-			
+			return result;
 		} else {
 			return null;
 		}
@@ -70,9 +68,8 @@ export class Database {
 
     public async isFound(key: string) : Promise<boolean>  {
 		console.log("isFound: key = " + key);
-		let u,v,w,x,y,z = await this.getTeam(key);
-		console.log("is found result = " + u + v + w + x + y + z);
-		if (u === null) {
+		let v = await this.getTeam(key);
+		if (v === null) {
 			return false;
 		} else {
 			return true;
