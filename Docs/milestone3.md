@@ -41,5 +41,3 @@ Jeenil Patel:
 
 Anthony Hong:
 1. Worked to create the deleteTeam function in order for the users to delete an already existing team
-2. Helped with teamCreate function
-
