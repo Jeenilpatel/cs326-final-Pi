@@ -65,8 +65,8 @@ export class MyServer {
     }
 
     private async deleteHandler(request, response) : Promise<void> {
-		await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
-	}
+        await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
+    }
 
     public listen(port) : void  {
 		this.server.listen(port);
@@ -122,11 +122,10 @@ export class MyServer {
 	));
 	response.end();
     }
-    
     public async deleteCounter(name : string, response) : Promise<void> {
-		await this.theDatabase.del(name);
-		response.write(JSON.stringify({'result' : 'deleted',
-						   'value'  : name }));
-		response.end();
-	}
+        await this.theDatabase.del(name);
+        response.write(JSON.stringify({'result' : 'deleted',
+                           'value'  : name }));
+        response.end();
+    }
 };

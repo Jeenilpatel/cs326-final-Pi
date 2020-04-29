@@ -456,13 +456,13 @@ function teamUpdate() {
 
 function teamDelete() {
     (async () => {
-	let counterName = document.getElementById("Team-Name").value;
-	let userName = document.getElementById("username").value;
-	let data = { 'name': counterName};
-	const newURL = url + "/users/" + userName + "/delete";
-	console.log("counterDelete: fetching " + newURL);
+    let counterName = document.getElementById("Team-Name").value;
+    let userName = document.getElementById("username").value;
+    let data = { 'name': counterName};
+    const newURL = url + "/users/" + userName + "/delete";
+    console.log("counterDelete: fetching " + newURL);
     document.getElementById("")
-	const resp = await postData(newURL, data);	    
+    const resp = await postData(newURL, data);
     const j = await resp.json();
 
     document.getElementById("PokeID1").value = "";
@@ -484,13 +484,14 @@ function teamDelete() {
     document.getElementById("pokemon5_Name").innerHTML = "None";
     document.getElementById("pokemon6_Name").innerHTML = "None";
 
-	if (j['result'] !== 'error') {
-	    document.getElementById("output").innerHTML = "401: <b>" + userName + ", " + counterName + " deleted.</b>";
-	} else {
-	    document.getElementById("output").innerHTML = "400: " + userName + ", " + counterName + " not found.</b>";
-	}	 
+    if (j['result'] !== 'error') {
+        document.getElementById("output").innerHTML = "401: <b>" + userName + ", " + counterName + " deleted.</b>";
+    } else {
+        document.getElementById("output").innerHTML = "400: " + userName + ", " + counterName + " not found.</b>";
+    }
     })();
 }
+
 
 
 
