@@ -43,33 +43,36 @@ export class Database {
 	}
 	
 	
-    public async get(key: string) : Promise<string> {
+    public async getTeam(key: string) : Promise<string> {
 		let db = this.client.db(this.dbName); // this.level(this.dbFile);
 		let collection = db.collection(this.collectionName);
 		console.log("get: key = " + key);
 		let result = await collection.findOne({'name' : key });
 		console.log("get: returned " + JSON.stringify(result));
-		if (result) {
-			return result.value;
+	
+		if (result != null) {
+			console.log("GET TEAM: " + result.pokemon1)
+			return result.pokemon1, result.pokemon2, result.pokemon3, result.pokemon4, result.pokemon5, result.pokemon6;
+			
 		} else {
 			return null;
 		}
 	}
 
-	public async del(key: string) : Promise<void> {
-		let db = this.client.db(this.dbName);
-		let collection = db.collection(this.collectionName);
-		console.log("delete: key = " + key);
-		let result = await collection.deleteOne({'name' : key });
-		console.log("result = " + result);
-		// await this.db.del(key);
-	}
+	// public async del(key: string) : Promise<void> {
+	// 	let db = this.client.db(this.dbName);
+	// 	let collection = db.collection(this.collectionName);
+	// 	console.log("delete: key = " + key);
+	// 	let result = await collection.deleteOne({'name' : key });
+	// 	console.log("result = " + result.pokemon1);
+	// 	// await this.db.del(key);
+	// }
 
     public async isFound(key: string) : Promise<boolean>  {
 		console.log("isFound: key = " + key);
-		let v = await this.get(key);
-		console.log("is found result = " + v);
-		if (v === null) {
+		let u,v,w,x,y,z = await this.getTeam(key);
+		console.log("is found result = " + u + v + w + x + y + z);
+		if (u === null) {
 			return false;
 		} else {
 			return true;
