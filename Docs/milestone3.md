@@ -26,7 +26,7 @@ Teams document
 | pokemon6     | integer   | The value of the sixth pokemon  |  
 
 
-Division of Labor:
+Division of Labor:  
 Thomas Guaetta:
 1. Worked alongside Jeenil to get the teamCreate function working in order to connect to mongoDB and correctly write to the database
 2. Created the teamUpdate function so it correctly updates a field in the mongoDB
