@@ -338,6 +338,8 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
 // NEW: helper method for posting data
 async function postData(url, data) {
+    console.log("URL: " + url);
+    console.log("Data: ") + data;
     const resp = await fetch(url,
         {
             method: 'POST',
