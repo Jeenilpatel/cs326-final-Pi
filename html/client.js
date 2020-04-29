@@ -1,7 +1,7 @@
 //URL
-const url = "https://thawing-inlet-12172.herokuapp.com";
+//const url = "https://thawing-inlet-12172.herokuapp.com";
 
-//const url = "http://localhost:8080/counter";
+const url = "http://localhost:8080/counter";
 
 //Interactive Map
 
@@ -413,8 +413,9 @@ function teamRead() {
         document.getElementById("PokeID4").value = j['pokemon 4'];
         document.getElementById("PokeID5").value = j['pokemon 5'];
         document.getElementById("PokeID6").value = j['pokemon 6'];
+        
 	if (j['result'] !== 'error') {
-	    document.getElementById("output").innerHTML = "201: <b> Viewing " + counterName + "</b>";
+	    document.getElementById("output").innerHTML = "201: <b> Viewing "  + userName + ", " + counterName
 	} else {
 	    document.getElementById("output").innerHTML = "200: " + counterName + " not found.</b>";
     }
@@ -446,38 +447,50 @@ function teamUpdate() {
     const j = await resp.json();
     console.log(JSON.stringify(j));
 	if (j['result'] !== 'error') {
-	    document.getElementById("output").innerHTML = "301: <b>" + userName + ", " + counterName + " updated! </b>";
+	    document.getElementById("output").innerHTML = "301: <b>" + userName + ", " + counterName + " updated.</b>";
 	} else {
 	    document.getElementById("output").innerHTML = "300: " + userName + ", " + counterName + " not found.";
 	}	
     })();
 }
 
-    function teamDelete(){
+function teamDelete() {
+    (async () => {
+	let counterName = document.getElementById("Team-Name").value;
+	let userName = document.getElementById("username").value;
+	let data = { 'name': counterName};
+	const newURL = url + "/users/" + userName + "/delete";
+	console.log("counterDelete: fetching " + newURL);
+    document.getElementById("")
+	const resp = await postData(newURL, data);	    
+    const j = await resp.json();
 
-        // (async () => {
-            let teamName = document.getElementById("Team-Name").value;
-        //     let counterName = document.getElementById("countername").value;
-        //     let userName = document.getElementById("username").value;
-            
-        //     let data = { 'name': counterName};
-        //     const newURL = url + "/users/" + userName + "/delete";
-        //     console.log("counterDelete: fetching " + newURL);
-        
-        //     const resp = await postData(newURL, data);	    
-        //     const j = await resp.json();
-        //     if (j['result'] !== 'error') {
-        //         document.getElementById("output").innerHTML = "401: <b>" + userName + ", " + counterName + " deleted.</b>";
-        //     } else {
-        //         document.getElementById("output").innerHTML = "400: " + userName + ", " + counterName + " not found.</b>";
-        //     }	 
-        //     })();
+    document.getElementById("PokeID1").value = "";
+    document.getElementById("PokeID2").value = "";
+    document.getElementById("PokeID3").value = "";
+    document.getElementById("PokeID4").value = "";
+    document.getElementById("PokeID5").value = "";
+    document.getElementById("PokeID6").value = "";
+    document.getElementById("pokemon1").src = "./Img/pokeball_shake.gif";
+    document.getElementById("pokemon2").src = "./Img/pokeball_shake.gif";
+    document.getElementById("pokemon3").src = "./Img/pokeball_shake.gif";
+    document.getElementById("pokemon4").src = "./Img/pokeball_shake.gif";
+    document.getElementById("pokemon5").src = "./Img/pokeball_shake.gif";
+    document.getElementById("pokemon6").src = "./Img/pokeball_shake.gif";
+    document.getElementById("pokemon1_Name").innerHTML = "None";
+    document.getElementById("pokemon2_Name").innerHTML = "None";
+    document.getElementById("pokemon3_Name").innerHTML = "None";
+    document.getElementById("pokemon4_Name").innerHTML = "None";
+    document.getElementById("pokemon5_Name").innerHTML = "None";
+    document.getElementById("pokemon6_Name").innerHTML = "None";
 
-    
-
-       document.getElementById("output").innerHTML = "Team '" + teamName + "'  Deleted!";
-
-    }
+	if (j['result'] !== 'error') {
+	    document.getElementById("output").innerHTML = "401: <b>" + userName + ", " + counterName + " deleted.</b>";
+	} else {
+	    document.getElementById("output").innerHTML = "400: " + userName + ", " + counterName + " not found.</b>";
+	}	 
+    })();
+}
 
 
 
