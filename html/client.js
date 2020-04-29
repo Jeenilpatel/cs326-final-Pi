@@ -381,7 +381,7 @@ function createCounter() {
     console.log("counterCreate: fetching " + newURL);
 
     const resp = await postData(newURL, data);
-    console.log("resp: " + resp);
+    console.log("resp: " + JSON.stringify(resp));
     
     const j = await resp.json();
     console.log("j: " + j);
