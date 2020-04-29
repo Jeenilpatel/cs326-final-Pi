@@ -40,8 +40,8 @@ var Database = /** @class */ (function () {
     function Database(collectionName) {
         var _this = this;
         this.MongoClient = require('mongodb').MongoClient;
-        this.uri = "mongodb+srv://Jeenil:1234@cs326finalproject-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
-        this.dbName = "cs326FinalProject";
+        this.uri = "mongodb+srv://Jeenil:1234@cs326-xfsi3.mongodb.net/test?retryWrites=true&w=majority";
+        this.dbName = "csTesting";
         this.collectionName = collectionName;
         this.client = new this.MongoClient(this.uri, { useNewUrlParser: true });
         // Open up a connection to the client.
@@ -73,16 +73,17 @@ var Database = /** @class */ (function () {
             });
         }); })();
     }
-    Database.prototype.put = function (key) {
+    Database.prototype.putTeam = function (key, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6) {
         return __awaiter(this, void 0, void 0, function () {
             var db, collection, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        console.log("ENTERS putTeam FUNCTION");
                         db = this.client.db(this.dbName);
                         collection = db.collection(this.collectionName);
-                        console.log("put: key = " + key);
-                        return [4 /*yield*/, collection.updateOne({ 'name': key }, { 'upsert': true })];
+                        console.log("put: key = " + key + " pokemon1 = " + pokemon1 + " pokemon2 = " + pokemon2 + " pokemon3 = " + pokemon3 + " pokemon4 = " + pokemon4 + " pokemon5 = " + pokemon5 + " pokemon6 = " + pokemon6);
+                        return [4 /*yield*/, collection.updateOne({ 'name': key }, { $set: { 'pokemon1': pokemon1, 'pokemon2': pokemon2, 'pokemon3': pokemon3, 'pokemon4': pokemon4, 'pokemon5': pokemon5, 'pokemon6': pokemon6 } }, { 'upsert': true })];
                     case 1:
                         result = _a.sent();
                         console.log("result = " + result);
@@ -91,7 +92,7 @@ var Database = /** @class */ (function () {
             });
         });
     };
-    Database.prototype.get = function (key) {
+    Database.prototype.getTeam = function (key) {
         return __awaiter(this, void 0, void 0, function () {
             var db, collection, result;
             return __generator(this, function (_a) {
@@ -104,8 +105,8 @@ var Database = /** @class */ (function () {
                     case 1:
                         result = _a.sent();
                         console.log("get: returned " + JSON.stringify(result));
-                        if (result) {
-                            return [2 /*return*/, result.value];
+                        if (result != null) {
+                            return [2 /*return*/, result];
                         }
                         else {
                             return [2 /*return*/, null];
@@ -115,24 +116,14 @@ var Database = /** @class */ (function () {
             });
         });
     };
-    Database.prototype.del = function (key) {
-        return __awaiter(this, void 0, void 0, function () {
-            var db, collection, result;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        db = this.client.db(this.dbName);
-                        collection = db.collection(this.collectionName);
-                        console.log("delete: key = " + key);
-                        return [4 /*yield*/, collection.deleteOne({ 'name': key })];
-                    case 1:
-                        result = _a.sent();
-                        console.log("result = " + result);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
+    // public async del(key: string) : Promise<void> {
+    // 	let db = this.client.db(this.dbName);
+    // 	let collection = db.collection(this.collectionName);
+    // 	console.log("delete: key = " + key);
+    // 	let result = await collection.deleteOne({'name' : key });
+    // 	console.log("result = " + result.pokemon1);
+    // 	// await this.db.del(key);
+    // }
     Database.prototype.isFound = function (key) {
         return __awaiter(this, void 0, void 0, function () {
             var v;
@@ -140,10 +131,9 @@ var Database = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         console.log("isFound: key = " + key);
-                        return [4 /*yield*/, this.get(key)];
+                        return [4 /*yield*/, this.getTeam(key)];
                     case 1:
                         v = _a.sent();
-                        console.log("is found result = " + v);
                         if (v === null) {
                             return [2 /*return*/, false];
                         }
