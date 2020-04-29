@@ -338,6 +338,8 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
 // NEW: helper method for posting data
 async function postData(url, data) {
+    console.log("URL: " + url);
+    console.log("Data: ") + data;
     const resp = await fetch(url,
         {
             method: 'POST',
@@ -373,14 +375,18 @@ function createCounter() {
 
     let counterName = document.getElementById("Team-Name").value;
     let userName = document.getElementById("username").value;
-
-    const data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
     
+    const data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
+    console.log("Data: " + data);
+
     const newURL = url + "/users/" + userName + "/create";
     console.log("counterCreate: fetching " + newURL);
 
     const resp = await postData(newURL, data);
+    console.log("resp: " + JSON.stringify(resp));
+    
     const j = await resp.json();
+    console.log("j: " + j);
     
 	if (j['result'] !== 'error') {
 	    document.getElementById("output").innerHTML = "101: <b>" + userName + ", " + counterName + " created.</b>";

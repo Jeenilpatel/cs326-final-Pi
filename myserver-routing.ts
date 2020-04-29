@@ -67,6 +67,7 @@ export class MyServer {
     }
 
     private async deleteHandler(request, response) : Promise<void> {
+	console.log("ENTERS deleteHandler FUNCTION");
         await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
     }
 
@@ -75,6 +76,7 @@ export class MyServer {
 	}
 	
     public async createCounter(name: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
+		console.log("ENTERS createCounter FUNCTION");
 		await this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
 		response.write(JSON.stringify({'result' : 'created',
 						'name' : name,
