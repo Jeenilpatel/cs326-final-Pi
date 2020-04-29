@@ -1,5 +1,5 @@
 //URL
-const url = "https://thawing-inlet-12172.herokuapp.com";
+const url = "https://thawing-inlet-12172.herokuapp.com/counter";
 
 //const url = "http://localhost:8080/counter";
 
@@ -338,8 +338,6 @@ function fetchPokemon(PokeID, pokemon_Num, pokemon_Name) {
 
 // NEW: helper method for posting data
 async function postData(url, data) {
-    console.log("URL: " + url);
-    console.log("Data: ") + data;
     const resp = await fetch(url,
         {
             method: 'POST',
@@ -376,17 +374,12 @@ function createCounter() {
     let counterName = document.getElementById("Team-Name").value;
     let userName = document.getElementById("username").value;
     
-    const data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
-    console.log("Data: " + data);
-
+    const data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5, 'pokemon6' : PokeID6};
     const newURL = url + "/users/" + userName + "/create";
     console.log("counterCreate: fetching " + newURL);
 
     const resp = await postData(newURL, data);
-    console.log("resp: " + JSON.stringify(resp));
-    
     const j = await resp.json();
-    console.log("j: " + j);
     
 	if (j['result'] !== 'error') {
 	    document.getElementById("output").innerHTML = "101: <b>" + userName + ", " + counterName + " created.</b>";
@@ -451,7 +444,6 @@ function teamUpdate() {
 	let data = {'name' : counterName, 'pokemon1' : PokeID1, 'pokemon2' : PokeID2,  'pokemon3' : PokeID3, 'pokemon4' : PokeID4, 'pokemon5' : PokeID5,  'pokemon6' : PokeID6 };
     const resp = await postData(newURL, data);    
     const j = await resp.json();
-    console.log(JSON.stringify(j));
 	if (j['result'] !== 'error') {
 	    document.getElementById("output").innerHTML = "301: <b>" + userName + ", " + counterName + " updated.</b>";
 	} else {
@@ -509,16 +501,12 @@ async function getData(){
         const root = document.createElement('div')
         
     }
-
-    console.log(data);
 }
 
 //Reads in username & password fields and notifies user of signup
 function signUp() {
-    console.log("signUp function")
     let username = document.getElementById("userName_Input").value;
     let password = document.getElementById("password_Input").value;
-    console.log(username)
     modal.style.display = "block";
     if(username != "" && password != ""){
         document.getElementById("modalOutput").innerHTML = "User " + username + " signed up!"
@@ -532,7 +520,6 @@ function signUp() {
 function signIn() {
     let username = document.getElementById("userName_Input").value;
     let password = document.getElementById("password_Input").value;
-    console.log(username)
     modal.style.display = "block";
     if(username != "" && password != ""){
         document.getElementById("modalOutput").innerHTML = "User " + username + " Signed In!"
@@ -561,6 +548,5 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
-    console.log("modalClose")
   }
 }

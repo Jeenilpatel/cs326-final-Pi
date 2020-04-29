@@ -50,22 +50,18 @@ export class MyServer {
     }
     
     private async createHandler(request, response) : Promise<void> {
-	console.log("ENTERS createHandler FUNCTION");
 	await this.createCounter(request.params['userId'] + "-" + request.body.name, request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6, response);
 	}
 
     private async readHandler(request, response): Promise<void> {
-	console.log("ENTERS readHandler FUNCTION");
 	await this.readCounter(request.params['userId'] + "-" +  request.body.name, response);
     }
 
     private async updateHandler(request, response) : Promise<void> {
-	console.log("ENTERS updateHandler FUNCTION");
 	await this.updateCounter(request.params['userId'] + "-" + request.body.name, request.body.pokemon1, request.body.pokemon2, request.body.pokemon3, request.body.pokemon4, request.body.pokemon5, request.body.pokemon6, response);
     }
 
     private async deleteHandler(request, response) : Promise<void> {
-	console.log("ENTERS deleteHandler FUNCTION");
         await this.deleteCounter(request.params['userId']+"-"+request.body.name, response);
     }
 
@@ -74,7 +70,6 @@ export class MyServer {
 	}
 	
     public async createCounter(name: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
-		console.log("ENTERS createCounter FUNCTION");
 		await this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
 		response.write(JSON.stringify({'result' : 'created',
 						'name' : name,
@@ -111,7 +106,6 @@ export class MyServer {
 
     public async updateCounter(name: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number, response) : Promise<void> {
 	await this.theDatabase.putTeam(name, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6);
-	console.log("ENTERS updateCounter FUNCTION");
 	response.write(JSON.stringify({'result' : 'created',
 					'name' : name,
 					'pokemon 1' : pokemon1,

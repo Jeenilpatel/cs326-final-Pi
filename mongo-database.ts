@@ -43,12 +43,10 @@ export class Database {
     }
 
     public async putTeam(key: string, pokemon1: number, pokemon2: number, pokemon3: number, pokemon4: number, pokemon5: number, pokemon6: number) : Promise<void> {
-		console.log("ENTERS putTeam FUNCTION");
 		let db = this.client.db(this.dbName);
         let collection = db.collection(this.collectionName);
         console.log("put: key = " + key + " pokemon1 = " + pokemon1 + " pokemon2 = " + pokemon2 + " pokemon3 = " + pokemon3 + " pokemon4 = " + pokemon4 + " pokemon5 = " + pokemon5 + " pokemon6 = " + pokemon6)
         let result = await collection.updateOne({'name' : key}, {$set: { 'pokemon1': pokemon1, 'pokemon2': pokemon2,  'pokemon3': pokemon3, 'pokemon4': pokemon4, 'pokemon5': pokemon5, 'pokemon6': pokemon6}}, { 'upsert' : true } );
-        console.log("result = " + result);
 	}
 	
 	
@@ -70,14 +68,11 @@ export class Database {
         let collection = db.collection(this.collectionName);
         console.log("delete: key = " + key);
         let result = await collection.deleteOne({'name' : key });
-        console.log("result = " + result);
         // await this.db.del(key);
     }
 
     public async isFound(key: string) : Promise<boolean>  {
-		console.log("isFound: key = " + key);
 		let v = await this.getTeam(key);
-		console.log("is found result = " + JSON.stringify(v));
 		if (v === null) {
 			return false;
 		} else {
