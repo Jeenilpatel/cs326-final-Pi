@@ -80,6 +80,59 @@ Example of a user incorrectly signing in:
 ![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login3.png "Home Page HTML")
 
 
+Login Page:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login1.png "Home Page HTML")
+
+The login page is where a user who already has an account is able to login to said account in order to see their pre-existing teams. Similarly to the homepage, this page checks to see if the two input fields are being correctly filled out.
+
+Example of a user correctly signing in:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login2.png "Home Page HTML")
+
+Example of a user incorrectly signing in:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login3.png "Home Page HTML")
+
+ 
+
+Flowchart:
+![Flowchart](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3)_Images/API_Flowchart.JPG "Flowchart")
+
+Database:
+
+Our database is reading in the username, the team name, and the six pokemon numbers entered by the user on the teams page.
+
+| Column       | Data Type | Description                     |
+|--------------|-----------|---------------------------------|
+| username     | String    | The name of the user            |
+| teamname     | String    | The name of the team            |
+| pokemon1     | integer   | The value of the first pokemon  |
+| pokemon2     | integer   | The value of the two pokemon    |
+| pokemon3     | integer   | The value of the third pokemon  |
+| pokemon4     | integer   | The value of the fourth pokemon |
+| pokemon5     | integer   | The value of the fifth pokemon  |
+| pokemon6     | integer   | The value of the sixth pokemon  |
+
+URL Routes/Mapping:
+
+url: "https://thawing-inlet-12172.herokuapp.com/counter";
+The url for our website (input for url variable below)
+
+teamCreate: url + "/users/" + userName + "/create";
+This is used for the create function on the teams page
+
+teamRead: url + "/users/" + userName + "/read";
+This is used for the read function on the teams page
+
+teamUpdate: url + "/users/" + userName + "/update";
+This is used for the update function on the teams page
+
+teamDelete: url + "/users/" + userName + "/delete";
+This is used for the delete function on the teams page
+
+
+Authentication/Authorization: 
+When signed in, a user has the ability to save the teams they create to their account on the database. This allows them to later view them or update them if they so please. Since we were not taught how to implement this, nor given code to do so we omitted the ability to login. For the time being, the user will just have the option to input their username in a field within the teams page. The major downside is that anyone who knows a given users username and team name, they can view, edit or delete that user's teams.
+
+
 
 
 Division of labor:
@@ -148,6 +201,30 @@ Milestone 3:
 2. Worked to create the readTeam function in order for the users to view the team
 3. Worked alongside Thomas (with help from William) in order to get the secrets.json to work for the purpose of holding the mongoDB link
 4. Created the mongoDB database for the team and did the Reveal Config variables (password stuff)
+
+For Final Submission:
+1. Worked as a team to create our demo
+2. Worked to create the final writeup
+
+
+Anthony Hong:
+
+From milestone 1:
+1. Wrote information about the interactive Map
+2. Helped with ideas for pokedex on discord
+3. Created css for filter button on pokedex page
+4. Created filer button.
+5. Found picture for the map
+5. Created interactive map where yiu can click on each city and see more information.
+
+Milestone 2:
+1. Helped with markdown file.
+2. worked on JS for interactive map 
+3. worked on JS for and client side for teams page
+4. Helped with server side on teams page
+
+Milestone 3:
+1. Worked to create the deleteTeam function in order for the users to delete an already existing team
 
 For Final Submission:
 1. Worked as a team to create our demo
