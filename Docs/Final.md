@@ -1,6 +1,6 @@
-**Title:** Team Pi
-**Subtitle:** Poke-Assistant
-**Semester:** Spring 2021
+**Title:** Team Pi  
+**Subtitle:** Poke-Assistant  
+**Semester:** Spring 2021  
 
 **Overview:**
 Pokemon is a series of video games developed by Game Freak and published by Nintendo. The games are massively popular, so much so that 
