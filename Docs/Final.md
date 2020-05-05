@@ -7,8 +7,7 @@ Pokemon is a series of video games developed by Game Freak and published by Nint
 they are the highest grossing franchise in existence, with an estimated total revenue of $90 billion. In the pokemon games, there are hundreds 
 of these creatures (known as pokemon), and each have their own classifications known as their type (a kind of element that determines their attacks).
 
-    Our application would be an assistant for the game that players can use in coordination with the game. This would include various tools such as an 
-interactable pokemon tracker/list, a lookup for pokemon statistics and a calculator for pokemon weaknesses.
+Our application would be an assistant for the game that players can use in coordination with the game. This would include various tools such as an interactable pokemon tracker/list, a lookup for pokemon statistics and a calculator for pokemon weaknesses.
 
 Team Members: 
 Thomas Guaetta (Tguaetta), Jeenil Patel (Jeenilpatel), Anthony Hong (honganthony)
@@ -17,82 +16,82 @@ Thomas Guaetta (Tguaetta), Jeenil Patel (Jeenilpatel), Anthony Hong (honganthony
 User Interface:
 
 Home Page:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/Homepage1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/Homepage1.png "Home Page HTML")
 
 The homepage is where the user will be led upon entry of the website. It allows for the user to create a login, which will check to see if they have entered the correct parameters as needed. It will also give them an option of going to the sign in page if they already have an account created.
 
 Example of a user creating an account:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/Homepage2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/Homepage2.png "Home Page HTML")
 
 Example of a user incorrectly entering information:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/Homepage3.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/Homepage3.png "Home Page HTML")
 
 Pokedex Page:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/Pokedex1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/Pokedex1.png "Home Page HTML")
 
 The Pokedex page is where users can see a list of the original 151 pokemon as available in the game. This is similar to how in the games the player has a pokedex that they will be able to view the pokemon, but on our website we allow the users to click on the pokemon to see a more detailed information page with info such as their base stats, their height and their weight. 
 
 Example of a user clicking on a pokemon:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/Pokedex2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/Pokedex2.png "Home Page HTML")
 
 Teams Page:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TeamsPage1.png "Home Page HTML")
 
 The teams page is where a user can create a team with 6 pokemon and it will be tracked on the database. This aligns with how in the game series the player is able to have up to 6 pokemon at a time; so the user can use this page to plan out their in-game team. It takes in the username of the user, the desired team name, and the 6 numbers corresponding to the pokemon in the pokedex (as with the main game). This is where our website shows the elements of CRUD. The create team button reads in all the elements and creates a team on the database using POST. The read team button uses GET to fetch the team from the database the matches the username and the team name inputted by the user. The update button acts similarly to the create button, but instead requires an already created team to be updated. It reads in the username, team name and 6 pokemon and updates the database accordingly. The delete button uses GET to fetch the team from the database and delete it.
 
 Example of a user creating a team:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TeamsPage2.png "Home Page HTML")
 
 Example of a user reading a team:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage3.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TeamsPage3.png "Home Page HTML")
 
 Example of a user updating a team:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage4.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TeamsPage4.png "Home Page HTML")
 
 Example of a user deleting a team:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage5.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TeamsPage5.png "Home Page HTML")
 
 Interactive Map:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/InteractiveMap1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/InteractiveMap1.png "Home Page HTML")
 
 The interactive map is where players can see the original map from the game, and can click on a location in order to see its name, it’s available pokemon and information relating to the location in game.
 
 Example of a user clicking on a location:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TeamsPage2.png "Home Page HTML")
 
 Type Calculator:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TypeCalc1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TypeCalc1.png "Home Page HTML")
 
 The type calculator allows users to input one or two pokemon types and see a table informing them of what other types it is strong or weak against. This is important for players as type weaknesses are what the battle system of the game is based upon, and any user should benefit from correctly knowing what they are strong or weak against.
 
 Example of types being selected and output being given:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TypeCalc2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/TypeCalc2.png "Home Page HTML")
 
 Login Page:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/login1.png "Home Page HTML")
 
 The login page is where a user who already has an account is able to login to said account in order to see their pre-existing teams. Similarly to the homepage, this page checks to see if the two input fields are being correctly filled out.
 
 Example of a user correctly signing in:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/login2.png "Home Page HTML")
 
 Example of a user incorrectly signing in:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login3.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/login3.png "Home Page HTML")
 
 
 Login Page:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login1.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/login1.png "Home Page HTML")
 
 The login page is where a user who already has an account is able to login to said account in order to see their pre-existing teams. Similarly to the homepage, this page checks to see if the two input fields are being correctly filled out.
 
 Example of a user correctly signing in:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login2.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/login2.png "Home Page HTML")
 
 Example of a user incorrectly signing in:
-![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login3.png "Home Page HTML")
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3_Images/login3.png "Home Page HTML")
 
 Flowchart:
-![Flowchart](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3)_Images/API_Flowchart.JPG "Flowchart")
+![Flowchart](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/mileston3)_Images/API_Flowchart.JPG "Flowchart")
 
 Database:
 
@@ -137,7 +136,7 @@ Division of labor:
 
 Thomas Guaetta:
 
-From milestone 1:
+From Milestone 1:
 1. Created the wireframe layouts
 2. Made markdown file and layouts for milestone1
 3. Wrote type calculator information for milestone1
