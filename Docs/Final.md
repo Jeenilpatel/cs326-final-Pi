@@ -40,6 +40,45 @@ Teams Page:
 
 The teams page is where a user can create a team with 6 pokemon and it will be tracked on the database. This aligns with how in the game series the player is able to have up to 6 pokemon at a time; so the user can use this page to plan out their in-game team. It takes in the username of the user, the desired team name, and the 6 numbers corresponding to the pokemon in the pokedex (as with the main game). This is where our website shows the elements of CRUD. The create team button reads in all the elements and creates a team on the database using POST. The read team button uses GET to fetch the team from the database the matches the username and the team name inputted by the user. The update button acts similarly to the create button, but instead requires an already created team to be updated. It reads in the username, team name and 6 pokemon and updates the database accordingly. The delete button uses GET to fetch the team from the database and delete it.
 
+Example of a user creating a team:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage2.png "Home Page HTML")
+
+Example of a user reading a team:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage3.png "Home Page HTML")
+
+Example of a user updating a team:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage4.png "Home Page HTML")
+
+Example of a user deleting a team:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage5.png "Home Page HTML")
+
+Interactive Map:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/InteractiveMap1.png "Home Page HTML")
+
+The interactive map is where players can see the original map from the game, and can click on a location in order to see its name, it’s available pokemon and information relating to the location in game.
+
+Example of a user clicking on a location:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TeamsPage2.png "Home Page HTML")
+
+Type Calculator:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TypeCalc1.png "Home Page HTML")
+
+The type calculator allows users to input one or two pokemon types and see a table informing them of what other types it is strong or weak against. This is important for players as type weaknesses are what the battle system of the game is based upon, and any user should benefit from correctly knowing what they are strong or weak against.
+
+Example of types being selected and output being given:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/TypeCalc2.png "Home Page HTML")
+
+Login Page:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login1.png "Home Page HTML")
+
+The login page is where a user who already has an account is able to login to said account in order to see their pre-existing teams. Similarly to the homepage, this page checks to see if the two input fields are being correctly filled out.
+
+Example of a user correctly signing in:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login2.png "Home Page HTML")
+
+Example of a user incorrectly signing in:
+![HomePage](https://github.com/Jeenilpatel/cs326-final-Pi/blob/master/Docs/milestone3_Images/login3.png "Home Page HTML")
+
 
 
 
@@ -76,3 +115,40 @@ For Final Submission:
 1. Worked as a team to create our demo
 2. Worked to create the final writeup
 
+
+Jeenil Patel:
+
+Milestone 1:
+
+1. Wrote Information about the HomePage, Pokedex Page, and More Info and Login Page for M1
+2. Helped with ideas on layouts over Discord. Added the tab about having Favorites.
+3. Created all the base pages for Front Page, Interactive Map, Login Page, More Info Pages, Pokedex Page and created the Style_Sheet
+4. Did HTML & CSS for the Home page, Login Page and Pokedex Page and other Pages that use it.
+5. Added Navigation between Pages
+6. Found the data and Images that we need for each Pokemon in the respective folder
+7. Created a JSON file with the data for all the Pokemon from Gen 1. (Currently working on creating a database using MongoDB Atlas)
+8. Helped with the background for the pages.
+9. Pokedex Page - I have not printed anything for the pokemon info yet, as I am trying to figure out how to connect it to the Database. I am actually able to connect it to the server which stores all the value. If you run the file server.js it connects it. So I am trying to figure this out henceforth I have not hard coded the stuff about Pokemon info yet, because this would not be the best way to do it as it's data about 151 different entities. [OLD TESTING STUFF]
+
+Milestone 2:
+
+1. Worked on the PokedexPage client side JS and CSS
+2. Help implementing creating parts of the teams page backend JS and and client side interactions along with the HTML and CSS
+3. Created and wrote the setup.md file
+4. Worked on the routing stuff
+5. Made markdown file and added screenshots
+6. Helped with setting up database stuff
+7. Created a MongoDB database in order to save information about the Users and
+8. information associated with them.
+9. Deployed the Project on Heroku
+
+Milestone 3:
+
+1. Worked with Thomas to get the teamCreate function working for it to register to MongoDB correctly and write it to the Database
+2. Worked to create the readTeam function in order for the users to view the team
+3. Worked alongside Thomas (with help from William) in order to get the secrets.json to work for the purpose of holding the mongoDB link
+4. Created the mongoDB database for the team and did the Reveal Config variables (password stuff)
+
+For Final Submission:
+1. Worked as a team to create our demo
+2. Worked to create the final writeup
